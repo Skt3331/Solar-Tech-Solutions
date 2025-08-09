@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Advanced Solar Calculators</title>
+<style>
+    /* Enhanced calculator styling */
+    .calculator-nav {
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    
+    .calculator-card {
+        border-radius: 15px;
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+        backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+        border: 1px solid rgba(255, 255, 255, 0.18);
+        margin-bottom: 2rem;
+    }
+    
+    .calculator-form .form-control {
+        border-radius: 10px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 12px 15px;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    .calculator-form .form-control:focus {
+        box-shadow: 0 5px 15px rgba(37, 99, 235, 0.15);
+        border-color: var(--primary-color);
+    }
+    
+    .calculator-form .form-label {
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+        color: #333;
+    }
+    
+    .btn-solar {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        border: none;
+        color: white;
+        border-radius: 10px;
+        padding: 12px 24px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+    }
+    
+    .btn-solar:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+        color: white;
+    }
+    
+    .result-section {
+        background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
+    
+    .nav-pills .nav-link {
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin: 0 5px;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+    
+    .nav-pills .nav-link:hover {
+        background-color: rgba(37, 99, 235, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .nav-pills .nav-link.active {
+        background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+        box-shadow: 0 4px 15px rgba(37, 99, 235, 0.2);
+        transform: translateY(-2px);
+    }
+    
+    .glass-effect {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    
+    .ripple {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .ripple:after {
+        content: "";
+        display: block;
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        pointer-events: none;
+        background-image: radial-gradient(circle, #fff 10%, transparent 10.01%);
+        background-repeat: no-repeat;
+        background-position: 50%;
+        transform: scale(10, 10);
+        opacity: 0;
+        transition: transform .5s, opacity 1s;
+    }
+    
+    .ripple:active:after {
+        transform: scale(0, 0);
+        opacity: .3;
+        transition: 0s;
+    }
+    
+    .card {
+        border-radius: 10px;
+        border: none;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    /* India-themed accent */
+    .calculator-header {
+        position: relative;
+        padding-bottom: 15px;
+        margin-bottom: 30px;
+    }
+    
+    .calculator-header:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100px;
+        height: 4px;
+        background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .nav-pills .nav-link {
+            padding: 8px 12px;
+            margin: 0 2px;
+            font-size: 0.9rem;
+        }
+        
+        .calculator-nav {
+            overflow-x: auto;
+            white-space: nowrap;
+            padding: 10px;
+        }
+        
+        .calculator-nav ul {
+            display: inline-flex;
+            width: auto;
+        }
+    }
+</style>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <div class="calculator-header text-center">
+                <h1 class="gradient-text">Advanced Solar Power Calculators</h1>
+                <p class="text-muted mt-3">Plan your solar investment with our comprehensive calculation tools</p>
+            </div>
+            
+            <!-- Calculator Navigation -->
+            <div class="row mb-5">
+                <div class="col-md-12">
+                    <div class="calculator-nav p-3">
+                        <ul class="nav nav-pills justify-content-center flex-nowrap overflow-auto" id="calculatorTabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#savings">
+                                    <i class="fas fa-rupee-sign me-2"></i>Savings
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#panelSize">
+                                    <i class="fas fa-solar-panel me-2"></i>Panel Size
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#battery">
+                                    <i class="fas fa-battery-full me-2"></i>Battery
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#roi">
+                                    <i class="fas fa-chart-line me-2"></i>ROI
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#carbon">
+                                    <i class="fas fa-leaf me-2"></i>Carbon
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" data-bs-toggle="pill" data-bs-target="#advanced">
+                                    <i class="fas fa-cogs me-2"></i>Advanced
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Calculator Content -->
+            <div class="tab-content" id="calculatorContent">
+                <!-- Savings Calculator -->
+                <div class="tab-pane fade show active" id="savings">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-rupee-sign fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Solar Savings Calculator</h3>
+                                <p class="text-muted mb-0">Estimate your potential savings with solar power</p>
+                            </div>
+                        </div>
+                        <form id="savingsCalculator" class="calculator-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Monthly Electric Bill (₹)</label>
+                                    <input type="number" class="form-control" name="monthlyBill" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Average Daily Sun Hours</label>
+                                    <input type="number" class="form-control" name="sunHours" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Electricity Rate (₹/kWh)</label>
+                                    <input type="number" class="form-control" name="electricityRate" step="0.01" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">System Efficiency (%)</label>
+                                    <input type="number" class="form-control" name="efficiency" value="80" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate Savings
+                            </button>
+                        </form>
+                        <div id="savingsResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">Estimated Results</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Monthly Savings</h6>
+                                        <h3 class="gradient-text mb-0">₹<span id="monthlySavings">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Annual Savings</h6>
+                                        <h3 class="gradient-text mb-0">₹<span id="annualSavings">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">25-Year Savings</h6>
+                                        <h3 class="gradient-text mb-0">₹<span id="lifetimeSavings">0</span></h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Panel Size Calculator -->
+                <div class="tab-pane fade" id="panelSize">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-solar-panel fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Solar Panel Size Calculator</h3>
+                                <p class="text-muted mb-0">Determine the right system size for your needs</p>
+                            </div>
+                        </div>
+                        <form id="panelSizeCalculator" class="calculator-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Monthly Energy Usage (kWh)</label>
+                                    <input type="number" class="form-control" name="monthlyUsage" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Average Sun Hours per Day</label>
+                                    <input type="number" class="form-control" name="sunHours" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Panel Wattage (W)</label>
+                                    <input type="number" class="form-control" name="panelWattage" value="400" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">System Losses (%)</label>
+                                    <input type="number" class="form-control" name="systemLosses" value="20" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate System Size
+                            </button>
+                        </form>
+                        <div id="panelSizeResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">System Requirements</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Number of Panels</h6>
+                                        <h3 class="gradient-text mb-0"><span id="numberOfPanels">0</span> panels</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Total System Size</h6>
+                                        <h3 class="gradient-text mb-0"><span id="systemSize">0</span> kW</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Roof Area Needed</h6>
+                                        <h3 class="gradient-text mb-0"><span id="roofArea">0</span> sq.ft</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Battery Storage Calculator -->
+                <div class="tab-pane fade" id="battery">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-battery-full fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Battery Storage Calculator</h3>
+                                <p class="text-muted mb-0">Determine the right battery size for your needs</p>
+                            </div>
+                        </div>
+                        <form id="batteryCalculator" class="calculator-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Daily Energy Usage (kWh)</label>
+                                    <input type="number" class="form-control" name="dailyUsage" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Backup Duration (Days)</label>
+                                    <input type="number" class="form-control" name="backupDays" value="2" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Battery Depth of Discharge (%)</label>
+                                    <input type="number" class="form-control" name="depthOfDischarge" value="80" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">System Voltage (V)</label>
+                                    <input type="number" class="form-control" name="systemVoltage" value="48" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate Battery Size
+                            </button>
+                        </form>
+                        <div id="batteryResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">Battery Requirements</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Battery Capacity</h6>
+                                        <h3 class="gradient-text mb-0"><span id="batteryCapacity">0</span> kWh</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Amp-Hour Rating</h6>
+                                        <h3 class="gradient-text mb-0"><span id="ampHours">0</span> Ah</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Recommended Batteries</h6>
+                                        <h3 class="gradient-text mb-0"><span id="batteryCount">0</span> units</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ROI Calculator -->
+                <div class="tab-pane fade" id="roi">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-chart-line fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Return on Investment Calculator</h3>
+                                <p class="text-muted mb-0">Estimate the ROI of your solar investment</p>
+                            </div>
+                        </div>
+                        <form id="roiCalculator" class="calculator-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">System Cost (₹)</label>
+                                    <input type="number" class="form-control" name="systemCost" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Annual Energy Savings (₹)</label>
+                                    <input type="number" class="form-control" name="annualSavings" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Federal Tax Credit (%)</label>
+                                    <input type="number" class="form-control" name="taxCredit" value="30" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Annual Maintenance Cost (₹)</label>
+                                    <input type="number" class="form-control" name="maintenanceCost" value="7500" required>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate ROI
+                            </button>
+                        </form>
+                        <div id="roiResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">Investment Analysis</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Payback Period</h6>
+                                        <h3 class="gradient-text mb-0"><span id="paybackPeriod">0</span> years</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Net Savings (25 years)</h6>
+                                        <h3 class="gradient-text mb-0">₹<span id="netSavings">0</span></h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">ROI</h6>
+                                        <h3 class="gradient-text mb-0"><span id="roiPercentage">0</span>%</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Carbon Offset Calculator -->
+                <div class="tab-pane fade" id="carbon">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-leaf fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Carbon Offset Calculator</h3>
+                                <p class="text-muted mb-0">Calculate the carbon offset of your solar investment</p>
+                            </div>
+                        </div>
+                        <form id="carbonCalculator" class="calculator-form">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">Monthly Energy Production (kWh)</label>
+                                    <input type="number" class="form-control" name="monthlyProduction" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label class="form-label">System Lifetime (Years)</label>
+                                    <input type="number" class="form-control" name="systemLife" value="25" required>
+                                </div>
+                                <div class="col-md-12 mb-3">
+                                    <label class="form-label">Grid Energy Source</label>
+                                    <select class="form-control" name="gridSource">
+                                        <option value="coal">Coal (2.2 lbs CO2/kWh)</option>
+                                        <option value="natural_gas">Natural Gas (0.9 lbs CO2/kWh)</option>
+                                        <option value="mixed">Mixed Sources (1.5 lbs CO2/kWh)</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate Carbon Offset
+                            </button>
+                        </form>
+                        <div id="carbonResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">Environmental Impact</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Annual CO2 Reduction</h6>
+                                        <h3 class="gradient-text mb-0"><span id="annualCO2">0</span> tons</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Lifetime CO2 Reduction</h6>
+                                        <h3 class="gradient-text mb-0"><span id="lifetimeCO2">0</span> tons</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100 text-center p-3">
+                                        <h6 class="text-muted mb-2">Equivalent Trees Planted</h6>
+                                        <h3 class="gradient-text mb-0"><span id="treesPlanted">0</span> trees</h3>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Advanced Analysis Calculator -->
+                <div class="tab-pane fade" id="advanced">
+                    <div class="calculator-card p-4">
+                        <div class="d-flex align-items-center mb-4">
+                            <div class="calculator-icon me-3">
+                                <i class="fas fa-cogs fa-2x text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="gradient-text mb-1">Advanced Solar Analysis</h3>
+                                <p class="text-muted mb-0">Analyze the performance and environmental impact of your solar system</p>
+                            </div>
+                        </div>
+                        <form id="advancedCalculator" class="calculator-form">
+                            <div class="row">
+                                <!-- System Configuration -->
+                                <div class="col-md-6">
+                                    <h4 class="mb-3">System Configuration</h4>
+                                    <div class="mb-3">
+                                        <label class="form-label">Roof Pitch (degrees)</label>
+                                        <input type="number" class="form-control" name="roofPitch" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Roof Orientation (degrees from South)</label>
+                                        <input type="number" class="form-control" name="orientation" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Shading Factor (%)</label>
+                                        <input type="number" class="form-control" name="shadingFactor" required>
+                                    </div>
+                                </div>
+
+                                <!-- Environmental Factors -->
+                                <div class="col-md-6">
+                                    <h4 class="mb-3">Environmental Factors</h4>
+                                    <div class="mb-3">
+                                        <label class="form-label">Average Temperature (°C)</label>
+                                        <input type="number" class="form-control" name="temperature" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Dust/Soiling Loss (%)</label>
+                                        <input type="number" class="form-control" name="soilingLoss" value="5" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Snow Coverage (days/year)</label>
+                                        <input type="number" class="form-control" name="snowDays" required>
+                                    </div>
+                                </div>
+
+                                <!-- Financial Parameters -->
+                                <div class="col-md-6">
+                                    <h4 class="mb-3">Financial Parameters</h4>
+                                    <div class="mb-3">
+                                        <label class="form-label">Electricity Rate Inflation (%/year)</label>
+                                        <input type="number" class="form-control" name="rateInflation" value="3" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Panel Degradation Rate (%/year)</label>
+                                        <input type="number" class="form-control" name="degradationRate" value="0.5" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Financing Interest Rate (%)</label>
+                                        <input type="number" class="form-control" name="interestRate" required>
+                                    </div>
+                                </div>
+
+                                <!-- Advanced Options -->
+                                <div class="col-md-6">
+                                    <h4 class="mb-3">Advanced Options</h4>
+                                    <div class="mb-3">
+                                        <label class="form-label">Inverter Efficiency (%)</label>
+                                        <input type="number" class="form-control" name="inverterEfficiency" value="96" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">DC/AC Ratio</label>
+                                        <input type="number" class="form-control" name="dcacRatio" value="1.2" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Wire Losses (%)</label>
+                                        <input type="number" class="form-control" name="wireLosses" value="2" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-solar w-100 ripple">
+                                <i class="fas fa-calculator me-2"></i>Calculate Advanced Analysis
+                            </button>
+                        </form>
+                        <div id="advancedResult" class="result-section mt-4 d-none">
+                            <h4 class="gradient-text mb-3">Detailed Analysis Results</h4>
+                            <div class="row">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Performance Metrics</h5>
+                                            <p>System Efficiency: <span id="systemEfficiency">0</span>%</p>
+                                            <p>Annual Production: <span id="annualProduction">0</span> kWh</p>
+                                            <p>Performance Ratio: <span id="performanceRatio">0</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Financial Analysis</h5>
+                                            <p>LCOE: ₹<span id="lcoe">0</span>/kWh</p>
+                                            <p>NPV: ₹<span id="npv">0</span></p>
+                                            <p>IRR: <span id="irr">0</span>%</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4 mb-3">
+                                    <div class="card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Environmental Impact</h5>
+                                            <p>Energy Yield: <span id="energyYield">0</span> kWh/kWp</p>
+                                            <p>CO2 Avoided: <span id="co2Avoided">0</span> tons</p>
+                                            <p>Trees Equivalent: <span id="treesEquivalent">0</span></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row mt-4">
+                                <div class="col-12">
+                                    <canvas id="productionChart"></canvas>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Back to Products Button -->
+            <div class="text-center mt-4">
+                <a href="/products" class="btn btn-outline-primary hover-float">
+                    <i class="fas fa-arrow-left me-2"></i>Back to Products
+                </a>
+            </div>
+        </div>
+
+        <!-- Add Chart.js and calculator implementations -->
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="/js/calculator-implementations.js"></script>
+    </section>
+</body>
+</html> 

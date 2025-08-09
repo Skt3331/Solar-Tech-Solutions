@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Solar Power Solutions</title>
+</head>
+<body>
+	<section>
+		<!-- Hero Section -->
+		<div class="hero-section particle-background">
+			<div class="container">
+				<h1 class="hero-title gradient-text slide-in-left">Powering Tomorrow with Solar Energy</h1>
+				<p class="hero-subtitle slide-in-right">Sustainable solutions for a brighter future</p>
+				<a href="/products" class="btn btn-solar btn-lg pulse ripple">Explore Solutions</a>
+			</div>
+		</div>
+
+		<!-- Features Section -->
+		<div class="features-section" id="features">
+			<div class="container">
+				<h2 class="text-center mb-5 gradient-text reveal">Why Choose Solar Energy?</h2>
+				<div class="row">
+					<div class="col-md-4 mb-4">
+						<div class="feature-card reveal-left transform-3d">
+							<i class="fas fa-sun feature-icon float"></i>
+							<h4>Clean Energy</h4>
+							<p>Harness the power of the sun for sustainable and renewable energy solutions.</p>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="feature-card reveal transform-3d">
+							<i class="fas fa-dollar-sign feature-icon float"></i>
+							<h4>Cost Savings</h4>
+							<p>Reduce your electricity bills and enjoy long-term energy cost savings.</p>
+						</div>
+					</div>
+					<div class="col-md-4 mb-4">
+						<div class="feature-card reveal-right transform-3d">
+							<i class="fas fa-leaf feature-icon float"></i>
+							<h4>Eco-Friendly</h4>
+							<p>Minimize your carbon footprint and contribute to a cleaner environment.</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!-- Solar Benefits Counter -->
+        <div class="container-fluid bg-primary text-white py-5">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-card reveal">
+                            <i class="fas fa-bolt feature-icon mb-3"></i>
+                            <h2 class="counter gradient-text">25+</h2>
+                            <p>Years of Power Generation</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-card reveal">
+                            <i class="fas fa-percentage feature-icon mb-3"></i>
+                            <h2 class="counter gradient-text">95%</h2>
+                            <p>Energy Bill Reduction</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-card reveal">
+                            <i class="fas fa-home feature-icon mb-3"></i>
+                            <h2 class="counter gradient-text">1000+</h2>
+                            <p>Homes Powered</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="counter-card reveal">
+                            <i class="fas fa-tree feature-icon mb-3"></i>
+                            <h2 class="counter gradient-text">50K+</h2>
+                            <p>CO2 Tons Saved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- How Solar Works -->
+        <div class="container py-5">
+            <h2 class="text-center gradient-text mb-5 reveal">How Solar Power Works</h2>
+            <div class="row align-items-center">
+                <div class="col-md-6 reveal-left">
+                    <div class="solar-step glass-effect p-4 mb-4 transform-3d">
+                        <h3><i class="fas fa-solar-panel text-primary"></i> 1. Solar Collection</h3>
+                        <p>Solar panels convert sunlight into direct current (DC) electricity through photovoltaic cells.</p>
+                    </div>
+                    <div class="solar-step glass-effect p-4 mb-4 transform-3d">
+                        <h3><i class="fas fa-exchange-alt text-primary"></i> 2. Power Conversion</h3>
+                        <p>Inverters transform DC electricity into alternating current (AC) for home use.</p>
+                    </div>
+                    <div class="solar-step glass-effect p-4 mb-4 transform-3d">
+                        <h3><i class="fas fa-battery-full text-primary"></i> 3. Energy Storage</h3>
+                        <p>Excess energy is stored in batteries for use during nighttime or cloudy days.</p>
+                    </div>
+                    <div class="solar-step glass-effect p-4 mb-4 transform-3d">
+                        <h3><i class="fas fa-plug text-primary"></i> 4. Power Distribution</h3>
+                        <p>Clean solar energy powers your home, with excess fed back to the grid.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 reveal-right">
+                    <div class="solar-diagram glass-effect p-4">
+                        <img src="/img/solar-diagram.jpg" alt="Solar Power Diagram" class="img-fluid hover-float">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Solar Calculator -->
+        <div class="container-fluid bg-light py-5">
+            <div class="container">
+                <h2 class="text-center gradient-text mb-5 reveal">Solar Savings Calculator</h2>
+                <div class="row">
+                    <div class="col-md-8 offset-md-2">
+                        <div class="calculator-card glass-effect p-4 reveal">
+                            <form class="solar-calculator">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Monthly Electricity Bill (₹)</label>
+                                        <input type="number" class="form-control" id="monthlyBill" placeholder="Enter amount in rupees">
+                                    </div>
+                                    <div class="col-md-6 mb-3">
+                                        <label class="form-label">Your Location</label>
+                                        <select class="form-control" id="sunExposure">
+                                            <option value="high">Rajasthan/Gujarat (High Sun)</option>
+                                            <option value="medium" selected>Delhi/Maharashtra (Medium Sun)</option>
+                                            <option value="low">Kerala/Bengal (Lower Sun)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-solar w-100 ripple hover-glow">Calculate Savings</button>
+                            </form>
+                            <div id="calculatorResult" class="mt-4 text-center d-none">
+                                <h4 class="gradient-text">Estimated Annual Savings</h4>
+                                <div class="india-accent mb-3 mx-auto" style="max-width: 100px;"></div>
+                                <p class="h2 gradient-text">₹<span id="savingsAmount">0</span></p>
+                                <p class="mt-3">You could save approximately <span class="text-success fw-bold">₹<span id="monthlySavings">0</span></span> every month with solar energy!</p>
+                                <div class="mt-3 alert alert-info">
+                                    <p class="mb-0"><i class="fas fa-info-circle me-2"></i> You may be eligible for up to 40% government subsidy under the PM-KUSUM scheme</p>
+                                </div>
+                                <a href="/calculator" class="btn btn-primary mt-3">Get Detailed Solar Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Categories Section -->
+		<div class="container mt-5">
+			<h2 class="text-center mb-4 gradient-text reveal">Solar Solutions</h2>
+			<div class="row">
+				<div class="col-md-3 mb-4" th:each="c:${category}">
+					<div class="category-card hover-float reveal">
+						<div class="card-body text-center">
+							<img th:src="@{'/img/category_img/'+${c.imageName}}" class="img-fluid mb-3" alt="Category">
+							<h5><a th:href="@{'/products?category='+${c.name}}" class="text-decoration-none gradient-text">[[${c.name}]]</a></h5>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!-- Solar Technology -->
+        <div class="container py-5">
+            <h2 class="text-center gradient-text mb-5 reveal">Latest Solar Technology</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card glass-effect p-4 reveal-left">
+                        <i class="fas fa-microchip feature-icon float mb-3"></i>
+                        <h4>Bifacial Panels</h4>
+                        <p>Capture sunlight from both sides, increasing energy production by up to 30%.</p>
+                        <a href="#" class="btn btn-solar btn-sm mt-3 ripple">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card glass-effect p-4 reveal">
+                        <i class="fas fa-battery-three-quarters feature-icon float mb-3"></i>
+                        <h4>Smart Storage</h4>
+                        <p>Advanced battery systems with AI-powered energy management.</p>
+                        <a href="#" class="btn btn-solar btn-sm mt-3 ripple">Learn More</a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="tech-card glass-effect p-4 reveal-right">
+                        <i class="fas fa-mobile-alt feature-icon float mb-3"></i>
+                        <h4>Smart Monitoring</h4>
+                        <p>Real-time performance tracking and optimization via mobile app.</p>
+                        <a href="#" class="btn btn-solar btn-sm mt-3 ripple">Learn More</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Latest Products Section -->
+		<div class="container-fluid bg-light py-5">
+			<div class="container">
+				<h2 class="text-center mb-4 gradient-text reveal">Featured Products</h2>
+				<div class="row">
+					<div class="col-md-3 mb-4" th:each="p:${products}">
+						<div class="product-card hover-float reveal">
+							<div class="card-body text-center">
+								<img th:src="@{'/img/product_img/'+${p.image}}" class="img-fluid mb-3" alt="Product" style="height: 150px; object-fit: contain;">
+								<h5 class="product-title">[[${p.title}]]</h5>
+								<p class="product-price">
+									<span class="price">₹[[${p.discountPrice}]]</span>
+									<span class="original-price text-decoration-line-through text-secondary">₹[[${p.price}]]</span>
+									<span class="discount text-success">[[${p.discount}]]% off</span>
+								</p>
+								<a th:href="@{'/product/'+${p.id}}" class="btn btn-solar btn-sm ripple">View Details</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+        <!-- Testimonials -->
+        <div class="container py-5">
+            <h2 class="text-center gradient-text mb-5 reveal">What Our Customers Say</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card glass-effect p-4 reveal-left">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left text-primary mb-3"></i>
+                            <p>"Switching to solar was the best decision we made. Our energy bills have dropped significantly!"</p>
+                            <div class="testimonial-author">
+                                <h5 class="gradient-text">John Smith</h5>
+                                <p class="text-muted">Homeowner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card glass-effect p-4 reveal">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left text-primary mb-3"></i>
+                            <p>"The installation was quick and professional. The system has been performing excellently."</p>
+                            <div class="testimonial-author">
+                                <h5 class="gradient-text">Sarah Johnson</h5>
+                                <p class="text-muted">Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card glass-effect p-4 reveal-right">
+                        <div class="testimonial-content">
+                            <i class="fas fa-quote-left text-primary mb-3"></i>
+                            <p>"Great customer service and amazing energy savings. Highly recommend their solutions!"</p>
+                            <div class="testimonial-author">
+                                <h5 class="gradient-text">Mike Anderson</h5>
+                                <p class="text-muted">Property Manager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+		<!-- Contact Section -->
+		<div class="container py-5" id="contact">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="card shadow glass-effect reveal">
+						<div class="card-body">
+							<h2 class="text-center mb-4 gradient-text">Contact Us</h2>
+							<form>
+								<div class="mb-3">
+									<label for="name" class="form-label">Name</label>
+									<input type="text" class="form-control" id="name" required>
+								</div>
+								<div class="mb-3">
+									<label for="email" class="form-label">Email</label>
+									<input type="email" class="form-control" id="email" required>
+								</div>
+								<div class="mb-3">
+									<label for="message" class="form-label">Message</label>
+									<textarea class="form-control" id="message" rows="4" required></textarea>
+								</div>
+								<button type="submit" class="btn btn-solar w-100 ripple hover-glow">Send Message</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</section>
+
+    <!-- Add Calculator Script -->
+    <script>
+        document.querySelector('.solar-calculator').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const monthlyBill = parseFloat(document.getElementById('monthlyBill').value);
+            const sunExposure = document.getElementById('sunExposure').value;
+            
+            if (isNaN(monthlyBill) || monthlyBill <= 0) {
+                alert('Please enter a valid electricity bill amount');
+                return;
+            }
+            
+            let savingsMultiplier;
+            switch(sunExposure) {
+                case 'high': savingsMultiplier = 0.9; break;
+                case 'medium': savingsMultiplier = 0.75; break;
+                case 'low': savingsMultiplier = 0.6; break;
+                default: savingsMultiplier = 0.75;
+            }
+            
+            const annualSavings = monthlyBill * 12 * savingsMultiplier;
+            const monthlySavings = Math.round(monthlyBill * savingsMultiplier);
+            
+            document.getElementById('savingsAmount').textContent = Math.round(annualSavings).toLocaleString('en-IN');
+            document.getElementById('monthlySavings').textContent = monthlySavings.toLocaleString('en-IN');
+            document.getElementById('calculatorResult').classList.remove('d-none');
+            
+            // Scroll to results
+            document.getElementById('calculatorResult').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+        
+        // Helper function to format INR currency
+        function formatINR(amount) {
+            return new Intl.NumberFormat('en-IN', {
+                style: 'currency',
+                currency: 'INR',
+                maximumFractionDigits: 0
+            }).format(amount);
+        }
+    </script>
+</body>
+</html>

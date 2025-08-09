@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+</head>
+<body>
+    <nav th:replace="base :: nav"></nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Energy Storage Solutions</h1>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">Maximizing Your Solar Investment with Energy Storage</h2>
+                        <p class="lead">Energy storage systems allow you to store excess solar energy for use when the sun isn't shining, providing greater energy independence and maximizing your return on investment.</p>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-4">Benefits of Energy Storage</h3>
+                            <div class="row mb-5">
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i class="fas fa-battery-full fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Energy Independence</h5>
+                                            <p>Reduce reliance on the utility grid and protect against power outages with reliable backup power.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i class="fas fa-dollar-sign fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Cost Savings</h5>
+                                            <p>Avoid expensive peak electricity rates by using stored energy during high-demand periods.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i class="fas fa-sun fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Maximize Solar Usage</h5>
+                                            <p>Store excess daytime production for use at night instead of sending it back to the grid.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="d-flex">
+                                        <div class="me-3">
+                                            <i class="fas fa-leaf fa-2x text-primary"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Environmental Impact</h5>
+                                            <p>Reduce your carbon footprint by using more of your clean solar energy and less from the grid.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-4">Types of Energy Storage Solutions</h3>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Lithium-Ion Batteries</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                                            <i class="fas fa-bolt fa-5x text-primary"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6>Features:</h6>
+                                            <ul>
+                                                <li>High energy density - more power in less space</li>
+                                                <li>Long cycle life (5,000-10,000 cycles)</li>
+                                                <li>Low maintenance requirements</li>
+                                                <li>High charge/discharge efficiency (90-95%)</li>
+                                                <li>Rapid response time for power demands</li>
+                                            </ul>
+                                            <p><strong>Ideal For:</strong> Residential installations, daily cycling, and smart energy management.</p>
+                                            <p><strong>Popular Brands:</strong> Tesla Powerwall, LG Chem RESU, Enphase Encharge</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Lead-Acid Batteries</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                                            <i class="fas fa-car-battery fa-5x text-primary"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6>Features:</h6>
+                                            <ul>
+                                                <li>Lower upfront cost than lithium-ion</li>
+                                                <li>Established technology with proven reliability</li>
+                                                <li>Shorter cycle life (500-1,200 cycles)</li>
+                                                <li>Requires regular maintenance</li>
+                                                <li>Lower energy density - takes up more space</li>
+                                            </ul>
+                                            <p><strong>Ideal For:</strong> Budget-conscious users, backup power applications with infrequent cycling.</p>
+                                            <p><strong>Types:</strong> Flooded Lead-Acid (FLA), Absorbed Glass Mat (AGM), Gel</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="card mb-4">
+                                <div class="card-header bg-primary text-white">
+                                    <h5 class="mb-0">Saltwater Batteries</h5>
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col-md-4 text-center mb-3 mb-md-0">
+                                            <i class="fas fa-water fa-5x text-primary"></i>
+                                        </div>
+                                        <div class="col-md-8">
+                                            <h6>Features:</h6>
+                                            <ul>
+                                                <li>Non-toxic and environmentally friendly</li>
+                                                <li>No risk of fire or explosion</li>
+                                                <li>100% recyclable materials</li>
+                                                <li>Long lifespan with minimal degradation</li>
+                                                <li>Lower energy density than lithium-ion</li>
+                                            </ul>
+                                            <p><strong>Ideal For:</strong> Environmentally conscious users, applications where safety is a primary concern.</p>
+                                            <p><strong>Example:</strong> Aquion Energy Aspen batteries</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-4">Sizing Your Energy Storage System</h3>
+                            <p>The right battery size depends on your energy needs and goals:</p>
+                            <ul>
+                                <li><strong>Backup Power Only:</strong> If you simply want protection during outages, a smaller system focused on powering essential loads may be sufficient.</li>
+                                <li><strong>Self-Consumption:</strong> To maximize use of your solar energy, size your storage based on your average evening and nighttime usage.</li>
+                                <li><strong>Going Off-Grid:</strong> For total independence, you'll need enough storage to cover multiple days of usage during periods of limited sun.</li>
+                            </ul>
+                            <p>Our experts can help determine the optimal energy storage solution based on your energy usage patterns, solar system size, and specific goals.</p>
+                            <div class="text-center mt-4">
+                                <a href="/calculator" class="btn btn-primary me-3">Calculate Your Energy Needs</a>
+                                <a href="/contact" class="btn btn-outline-primary">Contact Our Energy Experts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="base :: footer"></footer>
+</body>
+</html> 

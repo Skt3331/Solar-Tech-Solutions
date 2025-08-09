@@ -1,0 +1,959 @@
+/* Page-specific Styles */
+
+/* Products Page */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.product-card {
+    transition: all 0.3s ease;
+    position: relative;
+    height: 100%;
+    background: #fff;
+    content-visibility: auto;
+    contain: content;
+    contain-intrinsic-size: 350px;
+}
+
+.product-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%);
+    transition: transform 0.6s ease;
+}
+
+.product-card:hover::before {
+    transform: translateX(100%);
+}
+
+.product-card:hover {
+    transform: translate3d(0, -8px, 0);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15) !important;
+}
+
+.product-image {
+    height: 200px;
+    object-fit: contain;
+    padding: 1rem;
+    background: rgba(248, 249, 250, 0.5);
+    transition: all 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 1.5rem;
+}
+
+.product-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+}
+
+.product-price {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.product-description {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.product-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10;
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+.current-price {
+    color: var(--primary-color);
+    font-size: 1.25rem;
+}
+
+.original-price {
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+.pricing-info {
+    margin-bottom: 1rem;
+}
+
+/* Calculator Page */
+.calculator-container {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+    margin: 2rem 0;
+}
+
+.calculator-input {
+    background: rgba(255, 255, 255, 0.8);
+    border: 2px solid var(--border-color);
+    border-radius: 0.75rem;
+    padding: 1rem;
+    transition: var(--transition-fast);
+}
+
+.calculator-input:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.calculator-result {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+/* Blog Page */
+.blog-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    overflow: hidden;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+}
+
+.blog-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.blog-image {
+    height: 250px;
+    overflow: hidden;
+}
+
+.blog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .blog-image img {
+    transform: scale(1.1);
+}
+
+.blog-content {
+    padding: 1.5rem;
+}
+
+.blog-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.blog-meta {
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.blog-excerpt {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+/* Contact Page */
+.contact-form {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.contact-info {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    height: 100%;
+}
+
+.contact-info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-info-icon {
+    width: 50px;
+    height: 50px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+}
+
+/* About Page */
+.about-section {
+    padding: 4rem 0;
+}
+
+.about-image {
+    border-radius: 1.5rem;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+}
+
+.about-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.about-content {
+    padding: 2rem;
+}
+
+.about-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--text-dark);
+}
+
+.about-text {
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+/* Testimonials Page */
+.testimonial-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.testimonial-content {
+    font-style: italic;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 1rem;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-info h5 {
+    margin: 0;
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.testimonial-info p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Resources Page */
+.resource-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+    height: 100%;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.resource-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: rgba(var(--primary-rgb), 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.resource-card .card-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.resource-card .card-text {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.resource-card ul li a {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.resource-card ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Solutions Page */
+.solution-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+    height: 100%;
+    border: none;
+    box-shadow: var(--shadow-md);
+}
+
+.solution-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.solution-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: inline-block;
+    background: rgba(var(--primary-rgb), 0.1);
+    width: 80px;
+    height: 80px;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.solution-card .card-title {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.solution-card .card-text {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.solution-card ul li a {
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: var(--transition-fast);
+}
+
+.solution-card ul li a:hover {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.solution-card .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition-fast);
+}
+
+.solution-card .btn-primary:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* Financing Page */
+.financing-option {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: var(--transition-normal);
+}
+
+.financing-option:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.financing-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--text-dark);
+}
+
+.financing-details {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.financing-benefits {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.financing-benefits li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+}
+
+.financing-benefits li i {
+    color: var(--primary-color);
+    margin-right: 0.5rem;
+}
+
+/* Sidebar Categories */
+.list-group-item {
+    transition: all 0.2s ease;
+    margin-bottom: 0.25rem;
+    border-radius: 8px !important;
+}
+
+.list-group-item:hover:not(.active) {
+    background-color: rgba(46, 49, 146, 0.08);
+    transform: translateX(5px);
+}
+
+.list-group-item.active {
+    border-color: var(--primary-color) !important;
+}
+
+/* Search bar styling */
+.form-control-lg {
+    border-radius: 8px;
+}
+
+.form-control-lg:focus {
+    border-color: blueviolet;
+    box-shadow: 0 0 0 0.25rem rgba(0, 174, 239, 0.25);
+}
+
+/* Pagination styling */
+.pagination .page-link {
+    color: var(--primary-color);
+    border: none;
+    margin: 0 2px;
+    border-radius: 0;
+    transition: all 0.2s ease;
+}
+
+.pagination .page-link:hover {
+    background-color: rgba(46, 49, 146, 0.1);
+    color: var(--primary-color);
+}
+
+.pagination .page-item.active .page-link {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination .page-item:first-child .page-link {
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+}
+
+.pagination .page-item:last-child .page-link {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .col-lg-3.mb-4 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-image {
+        height: 180px;
+    }
+    
+    .col-lg-3.mb-4 {
+        width: 50%;
+    }
+}
+
+@media (max-width: 576px) {
+    .col-lg-3.mb-4 {
+        width: 100%;
+    }
+    
+    .product-card {
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+
+/* Product Detail Page Styles */
+.product-detail-image {
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    overflow: hidden;
+    min-height: 350px;
+}
+
+.product-detail-img {
+    max-height: 350px;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+.product-detail-img:hover {
+    transform: scale(1.05);
+}
+
+.product-title {
+    font-weight: 700;
+    color: var(--heading-color);
+}
+
+.discount-badge {
+    font-size: 0.85rem;
+    font-weight: 600;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.8; }
+    100% { opacity: 1; }
+}
+
+.feature-box {
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border-radius: 8px;
+    margin: 0 4px;
+    transform: translate3d(0, 0, 0);
+}
+
+.feature-box:hover {
+    background: rgba(46, 49, 146, 0.04);
+    transform: translate3d(0, -5px, 0);
+}
+
+.feature-icon {
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.feature-box:hover .feature-icon {
+    transform: scale(1.1);
+}
+
+.product-action .btn {
+    transition: all 0.3s ease;
+}
+
+.product-action .btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments for product detail page */
+@media (max-width: 992px) {
+    .product-detail-img {
+        max-height: 300px;
+    }
+    
+    .product-detail-image {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .product-detail-img {
+        max-height: 250px;
+    }
+    
+    .feature-box {
+        padding: 10px !important;
+    }
+    
+    .feature-icon {
+        height: 40px;
+        width: 40px;
+        line-height: 40px;
+    }
+    
+    .feature-icon i {
+        font-size: 1.5rem !important;
+    }
+}
+
+/* Performance Optimizations to Fix Flickering */
+.product-card, 
+.product-image, 
+.product-badge,
+.card-body,
+.product-detail-image,
+.product-detail-img,
+.feature-box,
+.feature-icon,
+.btn {
+    will-change: transform;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+}
+
+/* Smoother animations */
+.product-card,
+.product-image,
+.product-card:hover,
+.product-image:hover,
+.feature-box,
+.feature-box:hover,
+.hover-float,
+.hover-float:hover {
+    transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* Prevent content jumps on hover */
+.product-card,
+.feature-box {
+    transform: translate3d(0, 0, 0);
+}
+
+.product-card:hover {
+    transform: translate3d(0, -8px, 0);
+}
+
+.feature-box:hover {
+    transform: translate3d(0, -5px, 0);
+}
+
+/* Optimize content loading */
+.product-card {
+    content-visibility: auto;
+    contain: content;
+    contain-intrinsic-size: 350px;
+}
+
+/* Prevent layout shifts */
+.product-image {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-detail-image {
+    min-height: 350px;
+}
+
+@media (max-width: 768px) {
+    .product-detail-image {
+        min-height: 250px;
+    }
+}
+
+/* Smoother badge rendering */
+.badge {
+    transform: translateZ(0);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Optimize loading and transitions */
+img.product-image, 
+img.product-detail-img {
+    opacity: 0;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Prevent Flash of Unstyled Content (FOUC) */
+html:not(.js-loaded) .products-container,
+html:not(.js-loaded) .product-detail-image {
+    opacity: 0;
+}
+
+html.js-loaded .products-container,
+html.js-loaded .product-detail-image {
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+
+/* Improve image loading */
+.product-image:not(.loaded),
+.product-detail-img:not(.loaded) {
+    opacity: 0;
+}
+
+.product-image.loaded,
+.product-detail-img.loaded {
+    opacity: 1;
+    transition: opacity 0.4s ease;
+}
+
+/* Optimize rendering performance */
+.products-container {
+    transform: translateZ(0);
+    will-change: transform, opacity;
+    transition: all 0.3s ease;
+}
+
+/* Reduce layout shifts */
+.product-card {
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.product-badge {
+    will-change: transform;
+    transition: transform 0.3s ease !important;
+}
+
+/* Better transitions for hover states */
+.hover-float {
+    transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1) !important;
+}
+
+/* Prevent CLS (Cumulative Layout Shift) */
+.pagination {
+    min-height: 40px;
+}
+
+.product-image img {
+    transform: translateZ(0) scale(1);
+    transition: transform 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.product-card:hover .product-image img {
+    transform: translateZ(0) scale(1.05);
+}
+
+/* Hide incomplete content during render */
+.products-container {
+    opacity: 0;
+    animation: fadeInContent 0.4s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeInContent {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Indian theme elements */
+.india-accent {
+    background: linear-gradient(to right, #FF9933, #FFFFFF, #138808);
+    height: 3px;
+    width: 100%;
+    margin: 8px 0;
+}
+
+/* Tricolor badge styling */
+.badge.badge-tricolor {
+    background: linear-gradient(to right, #FF9933 33%, #FFFFFF 33%, #FFFFFF 66%, #138808 66%);
+    color: #000;
+    font-weight: 600;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+/* Made in India badge highlight */
+.badge-made-in-india {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    animation: pulseHighlight 2s infinite;
+}
+
+@keyframes pulseHighlight {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* INR currency symbol enhancement */
+.current-price,
+.original-price {
+    position: relative;
+}
+
+.inr-symbol {
+    font-weight: 700;
+    font-family: 'Arial', sans-serif;
+    margin-right: 1px;
+}
+
+/* Subsidy badge styling */
+.subsidy-badge {
+    background-color: #FF9933;
+    color: #fff;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+}
+
+/* Government scheme highlight */
+.govt-scheme {
+    border-left: 4px solid #138808;
+    padding-left: 0.75rem;
+}
+
+/* Certificate badges */
+.certificate-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.certificate-badge:hover {
+    background: rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+}
+
+/* EMI options styling */
+.emi-option {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.emi-option .card-body {
+    position: relative;
+}
+
+.emi-option .india-accent {
+    height: 2px;
+    margin: 6px 0;
+}
+
+.bank-icons img {
+    filter: grayscale(0.5);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+}
+
+.bank-icons img:hover {
+    filter: grayscale(0);
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* Better price formatting */
+.product-price .discount-badge {
+    vertical-align: middle;
+}
+
+.gst-included {
+    font-size: 0.75rem;
+    color: #138808;
+    margin-top: 0.25rem;
+}
+
+/* Installation service card */
+.installation-service {
+    background-color: rgba(19, 136, 8, 0.05);
+    border-left: 4px solid #138808;
+}
+
+.installation-service i {
+    color: #138808;
+}
+
+/* Make responsive elements more India focused */
+@media (max-width: 768px) {
+    .india-accent {
+        height: 2px;
+        margin: 6px 0;
+    }
+    
+    .certificate-badge {
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+    }
+} 

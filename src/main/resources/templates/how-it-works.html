@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>How Solar Works</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-5">How Solar Energy Works</h1>
+            
+            <!-- Process Timeline -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="timeline">
+                        <!-- Step 1 -->
+                        <div class="timeline-item reveal-left">
+                            <div class="glass-effect p-4">
+                                <h3>1. Solar Panel Installation</h3>
+                                <p>Solar panels are installed on your roof or ground mount system to capture sunlight throughout the day.</p>
+                                <img src="/img/installation.jpg" class="img-fluid rounded mt-3" alt="Solar Installation">
+                            </div>
+                        </div>
+
+                        <!-- Step 2 -->
+                        <div class="timeline-item reveal">
+                            <div class="glass-effect p-4">
+                                <h3>2. Converting Sunlight to Electricity</h3>
+                                <p>Photovoltaic cells in the panels convert sunlight into DC (Direct Current) electricity.</p>
+                                <img src="/img/conversion.jpg" class="img-fluid rounded mt-3" alt="Energy Conversion">
+                            </div>
+                        </div>
+
+                        <!-- Step 3 -->
+                        <div class="timeline-item reveal-right">
+                            <div class="glass-effect p-4">
+                                <h3>3. Inverter Technology</h3>
+                                <p>The inverter converts DC electricity into AC (Alternating Current) power that your home can use.</p>
+                                <img src="/img/inverter.jpg" class="img-fluid rounded mt-3" alt="Inverter">
+                            </div>
+                        </div>
+
+                        <!-- Step 4 -->
+                        <div class="timeline-item reveal-left">
+                            <div class="glass-effect p-4">
+                                <h3>4. Powering Your Home</h3>
+                                <p>The converted electricity powers your home appliances and devices. Excess power is sent to the grid or stored in batteries.</p>
+                                <img src="/img/home-power.jpg" class="img-fluid rounded mt-3" alt="Home Power">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Benefits Section -->
+            <div class="row mt-5">
+                <div class="col-md-12 text-center mb-4">
+                    <h2 class="gradient-text">Benefits of Solar Energy</h2>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect reveal-left">
+                        <div class="card-body">
+                            <h4 class="card-title">Environmental Impact</h4>
+                            <p class="card-text">Reduce your carbon footprint and help protect the environment for future generations.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect reveal">
+                        <div class="card-body">
+                            <h4 class="card-title">Financial Savings</h4>
+                            <p class="card-text">Save money on electricity bills and potentially earn from excess power generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect reveal-right">
+                        <div class="card-body">
+                            <h4 class="card-title">Energy Independence</h4>
+                            <p class="card-text">Reduce reliance on the grid and protect against rising energy costs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="row mt-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <div class="glass-effect p-4 reveal">
+                        <h3 class="gradient-text">Ready to Go Solar?</h3>
+                        <p>Take the first step towards energy independence.</p>
+                        <a href="/calculator" class="btn btn-primary btn-lg hover-float mt-3">Calculate Your Savings</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Contact Us - SolarTech India</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-3">Contact Us</h1>
+            <div class="india-accent mb-4 mx-auto" style="max-width: 150px;"></div>
+            <p class="text-center lead mb-5">We're here to help you on your solar journey. Reach out to our expert team with any questions.</p>
+            
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="card glass-effect reveal-left">
+                        <div class="card-body p-5">
+                            <h2 class="gradient-text mb-4">Send Us a Message</h2>
+                            <form id="contactForm" class="contact-form">
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label">Your Name</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" id="phone" placeholder="+91" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="subject" class="form-label">Subject</label>
+                                        <select class="form-select" id="subject" required>
+                                            <option value="">Choose...</option>
+                                            <option>Residential Solar Installation</option>
+                                            <option>Commercial Solar Solution</option>
+                                            <option>Solar for Agriculture</option>
+                                            <option>Battery Storage/Inverters</option>
+                                            <option>Maintenance & Support</option>
+                                            <option>Subsidy & Financing</option>
+                                            <option>Other</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label">Your Message</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-solar">
+                                            <i class="fas fa-paper-plane me-2"></i>Send Message
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div id="successMessage" class="alert alert-success mt-3" style="display: none;">
+                                <i class="fas fa-check-circle me-2"></i>Thank you for your message! We'll get back to you within 24 hours.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4">
+                    <div class="card contact-info-card glass-effect h-100 reveal-right">
+                        <div class="card-body p-4">
+                            <h3 class="gradient-text mb-4">Our Offices</h3>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> Head Office</h5>
+                                <p>123 Solar House, M.G. Road<br>New Delhi, 110001<br>India</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-map-marker-alt me-2 text-primary"></i> Regional Offices</h5>
+                                <p class="mb-2">Mumbai • Bangalore • Chennai<br>Hyderabad • Kolkata • Ahmedabad</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-phone me-2 text-primary"></i> Phone</h5>
+                                <p>Toll Free: 1800-123-4567<br>Support: +91 98765 43210</p>
+                            </div>
+                            <div class="mb-4">
+                                <h5><i class="fas fa-envelope me-2 text-primary"></i> Email</h5>
+                                <p>info@solartechindia.com<br>support@solartechindia.com</p>
+                            </div>
+                            <div>
+                                <h5><i class="fas fa-clock me-2 text-primary"></i> Business Hours</h5>
+                                <p>Monday - Saturday: 9:00 AM - 6:00 PM<br>Sunday: Closed</p>
+                            </div>
+                            <div class="mt-4">
+                                <h5><i class="fas fa-hashtag me-2 text-primary"></i> Follow Us</h5>
+                                <div class="social-links mt-2">
+                                    <a href="#" class="social-icon me-2"><i class="fab fa-facebook-f"></i></a>
+                                    <a href="#" class="social-icon me-2"><i class="fab fa-twitter"></i></a>
+                                    <a href="#" class="social-icon me-2"><i class="fab fa-linkedin-in"></i></a>
+                                    <a href="#" class="social-icon me-2"><i class="fab fa-instagram"></i></a>
+                                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Map Section -->
+            <div class="card glass-effect mt-5 reveal-bottom">
+                <div class="card-body p-0">
+                    <div class="row g-0">
+                        <div class="col-lg-4 p-4">
+                            <h3 class="gradient-text mb-3">Visit Our Showroom</h3>
+                            <p>See our solar panels in action and talk to our experts in person. Our demonstration showroom features working solar installations and energy monitoring systems.</p>
+                            <div class="d-flex align-items-center mt-4">
+                                <i class="fas fa-directions fa-2x text-primary me-3"></i>
+                                <div>
+                                    <h5 class="mb-1">Get Directions</h5>
+                                    <p class="mb-0">Use Google Maps to navigate to our nearest showroom</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div id="map" style="height: 400px; width: 100%;"></div>
+                            <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+                            <script>
+                                function initMap() {
+                                    // Coordinates for New Delhi (example location)
+                                    const location = { lat: 28.6139, lng: 77.2090 };
+                                    
+                                    // Create map centered at location
+                                    const map = new google.maps.Map(document.getElementById('map'), {
+                                        zoom: 15,
+                                        center: location,
+                                        styles: [
+                                            {
+                                                featureType: 'all',
+                                                elementType: 'geometry',
+                                                stylers: [{ color: '#242f3e' }]
+                                            },
+                                            {
+                                                featureType: 'all',
+                                                elementType: 'labels.text.stroke',
+                                                stylers: [{ color: '#242f3e' }]
+                                            },
+                                            {
+                                                featureType: 'all',
+                                                elementType: 'labels.text.fill',
+                                                stylers: [{ color: '#746855' }]
+                                            }
+                                        ]
+                                    });
+                                    
+                                    // Add marker for the location
+                                    const marker = new google.maps.Marker({
+                                        position: location,
+                                        map: map,
+                                        title: 'SolarTech India Head Office'
+                                    });
+                                    
+                                    // Add info window
+                                    const infoWindow = new google.maps.InfoWindow({
+                                        content: '<div style="padding: 10px;"><h5>SolarTech India Head Office</h5><p>123 Solar House, M.G. Road<br>New Delhi, 110001<br>India</p></div>'
+                                    });
+                                    
+                                    // Show info window when marker is clicked
+                                    marker.addListener('click', () => {
+                                        infoWindow.open(map, marker);
+                                    });
+                                }
+                            </script>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loading Spinner -->
+    <div class="spinner-overlay">
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show loading spinner
+            document.querySelector('.spinner-overlay').style.display = 'flex';
+            
+            // Simulate form submission (replace with actual API call)
+            setTimeout(function() {
+                // Hide loading spinner
+                document.querySelector('.spinner-overlay').style.display = 'none';
+                
+                // Show success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form
+                e.target.reset();
+                
+                // Hide success message after 5 seconds
+                setTimeout(function() {
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

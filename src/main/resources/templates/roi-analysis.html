@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+</head>
+<body>
+    <nav th:replace="base :: nav"></nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Solar ROI Analysis</h1>
+        
+        <div class="row">
+            <div class="col-lg-9 mx-auto">
+                <div class="card mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">Understanding Your Solar Return on Investment</h2>
+                        <p class="lead">Solar power isn't just an environmental choice—it's a smart financial investment that delivers returns for decades. This guide will help you understand the financial benefits of going solar.</p>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-4">Key Factors in Solar ROI</h3>
+                            
+                            <div class="row mb-5">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body p-4">
+                                            <div class="text-center mb-3">
+                                                <i class="fas fa-sun fa-3x text-warning"></i>
+                                            </div>
+                                            <h4 class="card-title text-center">System Production</h4>
+                                            <p>The amount of electricity your system generates depends on:</p>
+                                            <ul>
+                                                <li>System size (kW)</li>
+                                                <li>Panel efficiency</li>
+                                                <li>Local sunshine hours</li>
+                                                <li>Panel orientation and tilt</li>
+                                                <li>Shading considerations</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body p-4">
+                                            <div class="text-center mb-3">
+                                                <i class="fas fa-dollar-sign fa-3x text-success"></i>
+                                            </div>
+                                            <h4 class="card-title text-center">Electricity Cost</h4>
+                                            <p>Higher electricity rates mean greater savings:</p>
+                                            <ul>
+                                                <li>Current utility rates</li>
+                                                <li>Historical rate increases (national average: 2.5-3.5% annually)</li>
+                                                <li>Time-of-use considerations</li>
+                                                <li>Demand charges (commercial)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body p-4">
+                                            <div class="text-center mb-3">
+                                                <i class="fas fa-percentage fa-3x text-primary"></i>
+                                            </div>
+                                            <h4 class="card-title text-center">Incentives</h4>
+                                            <p>Available incentives dramatically improve ROI:</p>
+                                            <ul>
+                                                <li>Federal Investment Tax Credit (30%)</li>
+                                                <li>State and local tax credits</li>
+                                                <li>Utility rebates</li>
+                                                <li>Performance-based incentives</li>
+                                                <li>SRECs (Solar Renewable Energy Credits)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100 border-0 shadow-sm">
+                                        <div class="card-body p-4">
+                                            <div class="text-center mb-3">
+                                                <i class="fas fa-home fa-3x text-info"></i>
+                                            </div>
+                                            <h4 class="card-title text-center">Property Value</h4>
+                                            <p>Solar increases home resale value:</p>
+                                            <ul>
+                                                <li>Average premium: 4.1% of home value</li>
+                                                <li>Studies show $5,000-$20,000 value increase per installed kilowatt</li>
+                                                <li>Faster home sales for solar properties</li>
+                                                <li>Tax exempt in many states</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-4">Sample ROI Analysis</h3>
+                            <p>Here's an example of a typical 8kW residential system installed in 2023:</p>
+                            
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Initial Investment</th>
+                                            <th>Description</th>
+                                            <th class="text-end">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Gross System Cost</td>
+                                            <td>8kW system at $3.00/watt</td>
+                                            <td class="text-end">$24,000</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Federal Tax Credit</td>
+                                            <td>30% of gross cost</td>
+                                            <td class="text-end">-$7,200</td>
+                                        </tr>
+                                        <tr>
+                                            <td>State Rebate</td>
+                                            <td>Varies by location (example)</td>
+                                            <td class="text-end">-$1,000</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td><strong>Net System Cost</strong></td>
+                                            <td><strong>After incentives</strong></td>
+                                            <td class="text-end"><strong>$15,800</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Annual Returns</th>
+                                            <th>Description</th>
+                                            <th class="text-end">Amount</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Annual Production</td>
+                                            <td>11,000 kWh (varies by location)</td>
+                                            <td class="text-end">11,000 kWh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Electricity Cost</td>
+                                            <td>$0.15/kWh (varies by utility)</td>
+                                            <td class="text-end">$0.15/kWh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Year 1 Savings</td>
+                                            <td>Electricity costs avoided</td>
+                                            <td class="text-end">$1,650</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Annual Rate Increase</td>
+                                            <td>Estimated utility inflation</td>
+                                            <td class="text-end">3%</td>
+                                        </tr>
+                                        <tr class="table-success">
+                                            <td><strong>25-Year Savings</strong></td>
+                                            <td><strong>Total avoided costs over system life</strong></td>
+                                            <td class="text-end"><strong>$63,572</strong></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="table-responsive mb-4">
+                                <table class="table table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Financial Metrics</th>
+                                            <th>Description</th>
+                                            <th class="text-end">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Payback Period</td>
+                                            <td>Years to recoup investment</td>
+                                            <td class="text-end">7.8 years</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Return on Investment</td>
+                                            <td>Total return divided by cost</td>
+                                            <td class="text-end">302%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Internal Rate of Return (IRR)</td>
+                                            <td>Annual rate of growth</td>
+                                            <td class="text-end">13.2%</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Levelized Cost of Energy</td>
+                                            <td>Cost per kWh over system life</td>
+                                            <td class="text-end">$0.057/kWh</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Property Value Increase</td>
+                                            <td>Estimated home value addition</td>
+                                            <td class="text-end">$16,000</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="alert alert-info p-4">
+                                <div class="d-flex">
+                                    <div class="me-3">
+                                        <i class="fas fa-info-circle fa-2x"></i>
+                                    </div>
+                                    <div>
+                                        <h4>Results Vary by Location</h4>
+                                        <p class="mb-0">This example is for illustration purposes. Your actual results will depend on many factors including system size, local electricity rates, available sunshine, and applicable incentives in your area.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3>Comparing Solar to Other Investments</h3>
+                            <p>When evaluating solar as an investment, it's useful to compare it to other common investment vehicles:</p>
+                            
+                            <div class="table-responsive mt-4">
+                                <table class="table table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Investment Type</th>
+                                            <th>Average Annual Return</th>
+                                            <th>Risk Level</th>
+                                            <th>Liquidity</th>
+                                            <th>Additional Benefits</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td><strong>Solar Power</strong></td>
+                                            <td>10-20%</td>
+                                            <td>Very Low</td>
+                                            <td>Low</td>
+                                            <td>Environmental benefits, protection from utility rate increases, increased property value</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Stock Market (S&P 500)</td>
+                                            <td>7-10%</td>
+                                            <td>High</td>
+                                            <td>High</td>
+                                            <td>Dividend potential, capital growth</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Real Estate</td>
+                                            <td>8-12%</td>
+                                            <td>Medium</td>
+                                            <td>Low</td>
+                                            <td>Rental income, appreciation, tax benefits</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bonds</td>
+                                            <td>2-5%</td>
+                                            <td>Low-Medium</td>
+                                            <td>Medium</td>
+                                            <td>Stable income, lower volatility</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Savings Account</td>
+                                            <td>0.5-1%</td>
+                                            <td>None</td>
+                                            <td>Very High</td>
+                                            <td>FDIC insurance, immediate access</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="text-center mt-5">
+                            <h3>Calculate Your Personalized ROI</h3>
+                            <p>Every solar investment is unique. Get a customized ROI analysis for your specific situation.</p>
+                            <div class="mt-4">
+                                <a href="/calculator" class="btn btn-primary me-3">Use Solar Calculator</a>
+                                <a href="/contact" class="btn btn-success">Get Expert Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="base :: footer"></footer>
+</body>
+</html> 

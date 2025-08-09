@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+</head>
+<body>
+    <nav th:replace="base :: nav"></nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center mb-5">Solar Panel Types Guide</h1>
+        
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="card mb-5">
+                    <div class="card-body p-5">
+                        <h2 class="mb-4">Understanding Solar Panel Technologies</h2>
+                        <p class="lead">Solar panels come in various types, each with its own advantages, efficiency ratings, and ideal use cases. This guide will help you understand the different options available.</p>
+                        
+                        <div class="mt-5">
+                            <h3 class="mb-3">Monocrystalline Solar Panels</h3>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="text-center mb-3">
+                                        <i class="fas fa-solar-panel fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>Key Features:</h5>
+                                    <ul>
+                                        <li>High efficiency (15-22%)</li>
+                                        <li>Made from single silicon crystal</li>
+                                        <li>Sleek black appearance</li>
+                                        <li>Longer lifespan (25+ years)</li>
+                                        <li>Better performance in low-light conditions</li>
+                                    </ul>
+                                    <p>Ideal for: Homes with limited roof space, premium installations, and locations with less direct sunlight.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="mb-3">Polycrystalline Solar Panels</h3>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="text-center mb-3">
+                                        <i class="fas fa-th-large fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>Key Features:</h5>
+                                    <ul>
+                                        <li>Medium efficiency (13-17%)</li>
+                                        <li>Made from multiple silicon fragments</li>
+                                        <li>Blue speckled appearance</li>
+                                        <li>More affordable than monocrystalline</li>
+                                        <li>Good lifespan (20-25 years)</li>
+                                    </ul>
+                                    <p>Ideal for: Budget-conscious homeowners with sufficient roof space and areas with consistent direct sunlight.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="mb-3">Thin-Film Solar Panels</h3>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="text-center mb-3">
+                                        <i class="fas fa-film fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>Key Features:</h5>
+                                    <ul>
+                                        <li>Lower efficiency (10-13%)</li>
+                                        <li>Made by depositing photovoltaic material on substrate</li>
+                                        <li>Lightweight and flexible</li>
+                                        <li>Perform better in high temperatures</li>
+                                        <li>Easier to manufacture</li>
+                                    </ul>
+                                    <p>Ideal for: Large commercial installations, curved surfaces, and portable applications.</p>
+                                </div>
+                            </div>
+                            
+                            <h3 class="mb-3">Bifacial Solar Panels</h3>
+                            <div class="row mb-4">
+                                <div class="col-md-4">
+                                    <div class="text-center mb-3">
+                                        <i class="fas fa-exchange-alt fa-4x text-primary"></i>
+                                    </div>
+                                </div>
+                                <div class="col-md-8">
+                                    <h5>Key Features:</h5>
+                                    <ul>
+                                        <li>Can capture sunlight from both sides</li>
+                                        <li>Increased energy production (5-30% more)</li>
+                                        <li>Great for reflective surfaces and ground mounts</li>
+                                        <li>Longer-lasting due to dual-sided protection</li>
+                                        <li>Modern aesthetics</li>
+                                    </ul>
+                                    <p>Ideal for: Ground-mounted installations, elevated rooftop systems, and locations with reflective surroundings.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3>Efficiency Comparison</h3>
+                            <div class="table-responsive">
+                                <table class="table table-bordered">
+                                    <thead class="table-primary">
+                                        <tr>
+                                            <th>Panel Type</th>
+                                            <th>Efficiency</th>
+                                            <th>Cost</th>
+                                            <th>Lifespan</th>
+                                            <th>Space Required</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Monocrystalline</td>
+                                            <td>15-22%</td>
+                                            <td>High</td>
+                                            <td>25+ years</td>
+                                            <td>Lowest</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Polycrystalline</td>
+                                            <td>13-17%</td>
+                                            <td>Medium</td>
+                                            <td>20-25 years</td>
+                                            <td>Medium</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Thin-Film</td>
+                                            <td>10-13%</td>
+                                            <td>Low</td>
+                                            <td>15-20 years</td>
+                                            <td>Highest</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Bifacial</td>
+                                            <td>15-22% (front) + 5-30% (back)</td>
+                                            <td>High</td>
+                                            <td>25+ years</td>
+                                            <td>Low-Medium</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-5">
+                            <h3>How to Choose the Right Solar Panel</h3>
+                            <p>Consider these factors when selecting solar panels for your installation:</p>
+                            <ol>
+                                <li><strong>Available space:</strong> Limited space may require higher efficiency panels.</li>
+                                <li><strong>Budget:</strong> Balance upfront costs with long-term energy production.</li>
+                                <li><strong>Climate:</strong> Some panels perform better in certain weather conditions.</li>
+                                <li><strong>Aesthetics:</strong> Consider the visual impact on your property.</li>
+                                <li><strong>Installation location:</strong> Roof mounting vs. ground mounting may affect your choice.</li>
+                            </ol>
+                            <p>Need help selecting the right solar panels for your needs? Our experts can provide personalized recommendations based on your specific requirements.</p>
+                            <div class="text-center mt-4">
+                                <a href="/contact" class="btn btn-primary">Contact Our Solar Experts</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="base :: footer"></footer>
+</body>
+</html> 

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: head">
+</head>
+<body>
+    <nav th:replace="base :: nav"></nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center gradient-text mb-5">Solar Financing Options</h1>
+
+        <div class="row">
+            <!-- Solar Loan -->
+            <div class="col-md-6 mb-4">
+                <div class="card glass-effect h-100">
+                    <div class="card-body">
+                        <h3 class="card-title gradient-text">Solar Loans</h3>
+                        <p class="card-text">Finance your solar installation with competitive interest rates and flexible terms.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Fixed monthly payments</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Terms from 5-20 years</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Competitive interest rates</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> You own the system</li>
+                        </ul>
+                        <button class="btn btn-solar mt-3" onclick="location.href='/solar-calculator'">Calculate Loan Payment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solar Lease -->
+            <div class="col-md-6 mb-4">
+                <div class="card glass-effect h-100">
+                    <div class="card-body">
+                        <h3 class="card-title gradient-text">Solar Lease</h3>
+                        <p class="card-text">Lease a solar system with little to no upfront cost and predictable payments.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Low/no upfront cost</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Fixed monthly payments</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Maintenance included</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Performance guarantee</li>
+                        </ul>
+                        <button class="btn btn-solar mt-3" onclick="location.href='/solar-calculator'">Calculate Lease Payment</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Power Purchase Agreement -->
+            <div class="col-md-6 mb-4">
+                <div class="card glass-effect h-100">
+                    <div class="card-body">
+                        <h3 class="card-title gradient-text">Power Purchase Agreement (PPA)</h3>
+                        <p class="card-text">Pay only for the power you use at a lower rate than your utility.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> No upfront cost</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Pay per kWh used</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Lower than utility rates</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Includes maintenance</li>
+                        </ul>
+                        <button class="btn btn-solar mt-3" onclick="location.href='/solar-calculator'">Calculate PPA Savings</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cash Purchase -->
+            <div class="col-md-6 mb-4">
+                <div class="card glass-effect h-100">
+                    <div class="card-body">
+                        <h3 class="card-title gradient-text">Cash Purchase</h3>
+                        <p class="card-text">Maximum long-term savings with a one-time investment.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Highest return on investment</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Full tax incentives</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> Immediate energy savings</li>
+                            <li class="mb-2"><i class="fas fa-check text-success"></i> System ownership</li>
+                        </ul>
+                        <button class="btn btn-solar mt-3" onclick="location.href='/solar-calculator'">Calculate ROI</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Financial Calculator Section -->
+        <div class="mt-5">
+            <h2 class="text-center gradient-text mb-4">Solar Financial Calculator</h2>
+            <div class="card glass-effect">
+                <div class="card-body">
+                    <form id="financialCalculator" class="row g-3">
+                        <div class="col-md-6">
+                            <label for="systemSize" class="form-label">System Size (kW)</label>
+                            <input type="number" class="form-control" id="systemSize" min="1" max="100" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="monthlyBill" class="form-label">Current Monthly Electric Bill (₹)</label>
+                            <input type="number" class="form-control" id="monthlyBill" min="0" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="financingType" class="form-label">Financing Option</label>
+                            <select class="form-select" id="financingType" required>
+                                <option value="">Choose...</option>
+                                <option value="loan">Solar Loan</option>
+                                <option value="lease">Solar Lease</option>
+                                <option value="ppa">PPA</option>
+                                <option value="cash">Cash Purchase</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="term" class="form-label">Term Length (Years)</label>
+                            <select class="form-select" id="term" required>
+                                <option value="5">5 Years</option>
+                                <option value="10">10 Years</option>
+                                <option value="15">15 Years</option>
+                                <option value="20">20 Years</option>
+                                <option value="25">25 Years</option>
+                            </select>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-solar">Calculate Savings</button>
+                        </div>
+                    </form>
+                    <div id="financingResult" class="result-section mt-4 d-none">
+                        <h4 class="gradient-text">Financial Analysis</h4>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <p>Monthly Payment:</p>
+                                <h5 class="gradient-text">₹<span id="monthlyPayment">0</span></h5>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Total Cost:</p>
+                                <h5 class="gradient-text">₹<span id="totalCost">0</span></h5>
+                            </div>
+                            <div class="col-md-4">
+                                <p>Net Savings:</p>
+                                <h5 class="gradient-text">₹<span id="netSavings">0</span></h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="base :: footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const formatINR = (number) => {
+                return new Intl.NumberFormat('en-IN', {
+                    maximumFractionDigits: 0
+                }).format(number);
+            };
+
+            document.getElementById('financialCalculator').addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const systemSize = parseFloat(document.getElementById('systemSize').value);
+                const monthlyBill = parseFloat(document.getElementById('monthlyBill').value);
+                const financingType = document.getElementById('financingType').value;
+                const term = parseInt(document.getElementById('term').value);
+
+                // Example calculations (replace with actual calculations)
+                const systemCost = systemSize * 75000; // ₹75,000 per kW
+                let monthlyPayment = 0;
+                let totalCost = 0;
+                let netSavings = 0;
+
+                switch(financingType) {
+                    case 'loan':
+                        const interestRate = 0.09; // 9% annual interest
+                        monthlyPayment = (systemCost * (interestRate/12) * Math.pow(1 + interestRate/12, term*12)) / (Math.pow(1 + interestRate/12, term*12) - 1);
+                        totalCost = monthlyPayment * term * 12;
+                        break;
+                    case 'lease':
+                        monthlyPayment = systemCost * 0.01; // 1% of system cost per month
+                        totalCost = monthlyPayment * term * 12;
+                        break;
+                    case 'ppa':
+                        const ppaRate = 3.5; // ₹3.5 per kWh
+                        monthlyPayment = (systemSize * 4 * 30 * ppaRate); // Assuming 4 hours of peak production per day
+                        totalCost = monthlyPayment * term * 12;
+                        break;
+                    case 'cash':
+                        monthlyPayment = 0;
+                        totalCost = systemCost;
+                        break;
+                }
+
+                netSavings = monthlyBill * 12 * term - totalCost;
+
+                document.getElementById('monthlyPayment').textContent = formatINR(monthlyPayment);
+                document.getElementById('totalCost').textContent = formatINR(totalCost);
+                document.getElementById('netSavings').textContent = formatINR(netSavings);
+                document.getElementById('financingResult').classList.remove('d-none');
+            });
+        });
+    </script>
+</body>
+</html> 

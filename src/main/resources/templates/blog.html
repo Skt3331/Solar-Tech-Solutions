@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Solar Energy Blog - SolarTech India</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-3">Solar Energy Blog</h1>
+            <div class="india-accent mb-4 mx-auto" style="max-width: 150px;"></div>
+            <p class="text-center lead mb-5">Stay updated with the latest news, trends, and insights about solar energy in India</p>
+            
+            <!-- Blog Search and Categories -->
+            <div class="row mb-5">
+                <div class="col-md-8">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search blog posts...">
+                        <button class="btn btn-primary" type="button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select">
+                        <option selected>All Categories</option>
+                        <option>Government Policies</option>
+                        <option>Technology Updates</option>
+                        <option>Residential Solar</option>
+                        <option>Commercial Solar</option>
+                        <option>Financing & Subsidies</option>
+                        <option>Success Stories</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Featured Blog Post -->
+            <div class="card glass-effect mb-5 border-0 reveal">
+                <div class="row g-0">
+                    <div class="col-lg-5">
+                        <div class="position-relative h-100">
+                            <div class="featured-tag position-absolute">Featured</div>
+                            <div class="featured-icon-container d-flex align-items-center justify-content-center h-100">
+                                <i class="fas fa-solar-panel featured-icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="card-body p-4 p-lg-5">
+                            <div class="d-flex align-items-center mb-3">
+                                <span class="badge bg-primary me-2">Government Policy</span>
+                                <small class="text-muted"><i class="far fa-calendar-alt me-1"></i> May 15, 2023</small>
+                            </div>
+                            <h2 class="card-title gradient-text">India's National Solar Mission: Achievements and Future Goals</h2>
+                            <p class="card-text">The National Solar Mission has been pivotal in India's renewable energy journey. With ambitious targets of 500 GW of renewable energy capacity by 2030, India is positioning itself as a global leader in solar adoption. This article explores the mission's impact, recent policy changes, and what they mean for both consumers and businesses...</p>
+                            <div class="d-flex align-items-center mb-3">
+                                <i class="fas fa-user-circle fa-2x me-2 text-primary"></i>
+                                <span>By Rajesh Kumar, Energy Policy Expert</span>
+                            </div>
+                            <a href="#" class="btn btn-solar hover-float">
+                                <i class="fas fa-arrow-right me-2"></i>Read Full Article
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Grid -->
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal-left">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-home blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">12</span>
+                                <span class="month">Apr</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-success me-2">Residential</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 2.4K views</small>
+                            </div>
+                            <h3 class="card-title">Rooftop Solar: The Urban Solution for India's Energy Needs</h3>
+                            <p class="card-text">With limited space in urban areas, rooftop solar installations are becoming increasingly popular in Indian cities. Learn how metropolitan residents are embracing this space-efficient solution...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-hand-holding-usd blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">28</span>
+                                <span class="month">Mar</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-warning text-dark me-2">Subsidies</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 3.8K views</small>
+                            </div>
+                            <h3 class="card-title">Complete Guide to Solar Subsidies Across Indian States in 2023</h3>
+                            <p class="card-text">Navigate the complex landscape of solar subsidies in India with our state-by-state breakdown. From Gujarat's generous incentives to Tamil Nadu's industrial policies...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal-right">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-cloud-rain blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">05</span>
+                                <span class="month">Mar</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-info me-2">Maintenance</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 1.9K views</small>
+                            </div>
+                            <h3 class="card-title">Preparing Your Solar Panels for the Indian Monsoon Season</h3>
+                            <p class="card-text">The monsoon brings unique challenges for solar panel maintenance in India. Our expert guide covers essential steps to protect your investment during heavy rains...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal-left">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-tractor blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">18</span>
+                                <span class="month">Feb</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-primary me-2">Agriculture</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 2.1K views</small>
+                            </div>
+                            <h3 class="card-title">How Solar Water Pumps Are Transforming Indian Agriculture</h3>
+                            <p class="card-text">The PM-KUSUM scheme is helping Indian farmers embrace solar-powered irrigation. Discover how this technology is reducing costs and improving crop yields across rural India...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-charging-station blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">02</span>
+                                <span class="month">Feb</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-danger me-2">Technology</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 4.3K views</small>
+                            </div>
+                            <h3 class="card-title">The Solar-EV Connection: India's Pathway to Clean Transportation</h3>
+                            <p class="card-text">As India pushes for electric vehicle adoption, solar-powered charging infrastructure is emerging as a sustainable solution. Explore how these technologies are converging...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect border-0 hover-float reveal-right">
+                        <div class="position-relative">
+                            <div class="blog-icon-container d-flex align-items-center justify-content-center">
+                                <i class="fas fa-building blog-icon"></i>
+                            </div>
+                            <div class="blog-date-badge">
+                                <span class="day">20</span>
+                                <span class="month">Jan</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center mb-2">
+                                <span class="badge bg-secondary me-2">Commercial</span>
+                                <small class="text-muted"><i class="far fa-eye me-1"></i> 1.7K views</small>
+                            </div>
+                            <h3 class="card-title">How Indian Businesses Are Cutting Costs with Commercial Solar</h3>
+                            <p class="card-text">From manufacturing facilities to office complexes, Indian businesses are increasingly turning to solar power to reduce operational expenses and meet sustainability goals...</p>
+                        </div>
+                        <div class="card-footer bg-transparent border-0">
+                            <a href="#" class="btn btn-link text-primary p-0">Read More <i class="fas fa-long-arrow-alt-right ms-1"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Pagination -->
+            <nav class="my-5">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item disabled">
+                        <a class="page-link" href="#" tabindex="-1">Previous</a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Newsletter Signup -->
+            <div class="card glass-effect mt-5 border-0 reveal-bottom">
+                <div class="card-body p-4 p-md-5">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6 mb-4 mb-lg-0">
+                            <h3 class="gradient-text mb-3">Stay Updated with Indian Solar Trends</h3>
+                            <p class="mb-0">Subscribe to our newsletter for the latest updates on solar policies, technology advancements, and exclusive content tailored for the Indian market.</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <form class="row g-3">
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control form-control-lg" placeholder="Your Email Address">
+                                </div>
+                                <div class="col-md-4">
+                                    <button type="submit" class="btn btn-solar btn-lg w-100">Subscribe</button>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacyCheck">
+                                        <label class="form-check-label" for="privacyCheck">
+                                            I agree to receive emails and accept the <a href="#">Privacy Policy</a>
+                                        </label>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Add CSS for blog styling -->
+    <style>
+        .blog-date-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(255,255,255,0.9);
+            border-radius: 5px;
+            padding: 5px 10px;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .blog-date-badge .day {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1;
+        }
+        
+        .blog-date-badge .month {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+        }
+        
+        .featured-tag {
+            background: #ff9800;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 0 0 5px 0;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            font-weight: 500;
+        }
+        
+        .blog-icon-container {
+            height: 180px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 5px 5px 0 0;
+        }
+        
+        .featured-icon-container {
+            background: linear-gradient(135deg, #2568ef 0%, #6236ff 100%);
+            border-radius: 5px 0 0 5px;
+        }
+        
+        .blog-icon {
+            font-size: 4rem;
+            color: var(--primary-color);
+        }
+        
+        .featured-icon {
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</body>
+</html> 

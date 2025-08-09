@@ -1,0 +1,654 @@
+{
+  "info": {
+    "name": "SolarTech India API Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Authentication",
+      "item": [
+        {
+          "name": "User Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "user@example.com"
+                },
+                {
+                  "key": "password",
+                  "value": "user123"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": ["{{base_url}}"],
+              "path": ["login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin Login",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "username",
+                  "value": "admin@solartechindia.com"
+                },
+                {
+                  "key": "password",
+                  "value": "admin123"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/login",
+              "host": ["{{base_url}}"],
+              "path": ["login"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Logout",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/logout",
+              "host": ["{{base_url}}"],
+              "path": ["logout"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "User Operations",
+      "item": [
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                {
+                  "key": "name",
+                  "value": "Test User",
+                  "type": "text"
+                },
+                {
+                  "key": "email",
+                  "value": "test.user@example.com",
+                  "type": "text"
+                },
+                {
+                  "key": "mobileNumber",
+                  "value": "9876543210",
+                  "type": "text"
+                },
+                {
+                  "key": "address",
+                  "value": "123 Test Street",
+                  "type": "text"
+                },
+                {
+                  "key": "city",
+                  "value": "Test City",
+                  "type": "text"
+                },
+                {
+                  "key": "state",
+                  "value": "Test State",
+                  "type": "text"
+                },
+                {
+                  "key": "pincode",
+                  "value": "123456",
+                  "type": "text"
+                },
+                {
+                  "key": "password",
+                  "value": "test123",
+                  "type": "text"
+                },
+                {
+                  "key": "img",
+                  "type": "file",
+                  "src": "/path/to/image.jpg"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/saveUser",
+              "host": ["{{base_url}}"],
+              "path": ["saveUser"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get User Profile",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/profile",
+              "host": ["{{base_url}}"],
+              "path": ["user", "profile"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Forgot Password",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/x-www-form-urlencoded"
+              }
+            ],
+            "body": {
+              "mode": "urlencoded",
+              "urlencoded": [
+                {
+                  "key": "email",
+                  "value": "user@example.com"
+                }
+              ]
+            },
+            "url": {
+              "raw": "{{base_url}}/forgot-password",
+              "host": ["{{base_url}}"],
+              "path": ["forgot-password"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Products",
+      "item": [
+        {
+          "name": "Get All Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products",
+              "host": ["{{base_url}}"],
+              "path": ["products"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Products by Category",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products?category=Solar Panels",
+              "host": ["{{base_url}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "category",
+                  "value": "Solar Panels"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Search Products",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/products?ch=inverter",
+              "host": ["{{base_url}}"],
+              "path": ["products"],
+              "query": [
+                {
+                  "key": "ch",
+                  "value": "inverter"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Get Product Details",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/product/1",
+              "host": ["{{base_url}}"],
+              "path": ["product", "1"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Cart Operations",
+      "item": [
+        {
+          "name": "Add to Cart",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/addCart?pid=1&uid=1",
+              "host": ["{{base_url}}"],
+              "path": ["user", "addCart"],
+              "query": [
+                {
+                  "key": "pid",
+                  "value": "1"
+                },
+                {
+                  "key": "uid",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View Cart",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/cart",
+              "host": ["{{base_url}}"],
+              "path": ["user", "cart"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Update Cart Quantity",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/cartQuantityUpdate?sy=inc&cid=1",
+              "host": ["{{base_url}}"],
+              "path": ["user", "cartQuantityUpdate"],
+              "query": [
+                {
+                  "key": "sy",
+                  "value": "inc"
+                },
+                {
+                  "key": "cid",
+                  "value": "1"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Orders",
+      "item": [
+        {
+          "name": "Create Order",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"John\",\n  \"lastName\": \"Doe\",\n  \"email\": \"john.doe@example.com\",\n  \"mobileNo\": \"9876543210\",\n  \"address\": \"123 Main Street\",\n  \"city\": \"Mumbai\",\n  \"state\": \"Maharashtra\",\n  \"pincode\": \"400001\",\n  \"paymentType\": \"Cash on Delivery\"\n}"
+            },
+            "url": {
+              "raw": "{{base_url}}/user/save-order",
+              "host": ["{{base_url}}"],
+              "path": ["user", "save-order"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "View User Orders",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/user/user-orders",
+              "host": ["{{base_url}}"],
+              "path": ["user", "user-orders"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Admin Operations",
+      "item": [
+        {
+          "name": "Admin Dashboard",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{base_url}}/admin/",
+              "host": ["{{base_url}}"],
+              "path": ["admin", ""]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Admin Products",
+          "item": [
+            {
+              "name": "Get All Products (Admin)",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/products",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "products"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add Product",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "title",
+                      "value": "Test Solar Panel",
+                      "type": "text"
+                    },
+                    {
+                      "key": "description",
+                      "value": "This is a test solar panel",
+                      "type": "text"
+                    },
+                    {
+                      "key": "category",
+                      "value": "Solar Panels",
+                      "type": "text"
+                    },
+                    {
+                      "key": "price",
+                      "value": "15000",
+                      "type": "text"
+                    },
+                    {
+                      "key": "discount",
+                      "value": "10",
+                      "type": "text"
+                    },
+                    {
+                      "key": "stock",
+                      "value": "50",
+                      "type": "text"
+                    },
+                    {
+                      "key": "isActive",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/path/to/image.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/saveProduct",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "saveProduct"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Delete Product",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/deleteProduct/1",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "deleteProduct", "1"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Admin Categories",
+          "item": [
+            {
+              "name": "Get All Categories",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/category",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "category"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Add Category",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "formdata",
+                  "formdata": [
+                    {
+                      "key": "name",
+                      "value": "Test Category",
+                      "type": "text"
+                    },
+                    {
+                      "key": "isActive",
+                      "value": "true",
+                      "type": "text"
+                    },
+                    {
+                      "key": "file",
+                      "type": "file",
+                      "src": "/path/to/image.jpg"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/saveCategory",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "saveCategory"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Admin Orders",
+          "item": [
+            {
+              "name": "Get All Orders",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/orders",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "orders"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update Order Status",
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "key": "id",
+                      "value": "1"
+                    },
+                    {
+                      "key": "st",
+                      "value": "5"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{base_url}}/admin/update-order-status",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "update-order-status"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Admin Users",
+          "item": [
+            {
+              "name": "View Users",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/users?type=1",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "users"],
+                  "query": [
+                    {
+                      "key": "type",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Update User Status",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{base_url}}/admin/updateSts?status=true&id=2&type=1",
+                  "host": ["{{base_url}}"],
+                  "path": ["admin", "updateSts"],
+                  "query": [
+                    {
+                      "key": "status",
+                      "value": "true"
+                    },
+                    {
+                      "key": "id",
+                      "value": "2"
+                    },
+                    {
+                      "key": "type",
+                      "value": "1"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8080",
+      "type": "string"
+    }
+  ]
+} 

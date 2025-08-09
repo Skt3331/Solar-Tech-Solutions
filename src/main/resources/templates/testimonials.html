@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Customer Testimonials - SolarTech India</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-3">Customer Success Stories</h1>
+            <div class="india-accent mb-4 mx-auto" style="max-width: 150px;"></div>
+            <p class="text-center lead mb-5">Hear what our customers across India have to say about their solar journey</p>
+            
+            <!-- Featured Testimonial -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card glass-effect reveal">
+                        <div class="card-body text-center p-5">
+                            <div class="mb-4">
+                                <i class="fas fa-user-circle fa-5x text-primary"></i>
+                            </div>
+                            <h4 class="gradient-text">The Sharma Family</h4>
+                            <p class="text-muted">Residential Solar Installation - Gurgaon, Haryana</p>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p class="lead">"Our electricity bills in Delhi NCR were extremely high during summers. After installing a 5kW solar system, our bill has reduced by almost 85%. The system has been operating flawlessly even during monsoon season, and we expect it to pay for itself in less than 4 years thanks to the government subsidy we received."</p>
+                            <div class="alert alert-success mt-3">
+                                <p class="mb-0"><i class="fas fa-rupee-sign me-2"></i><strong>Monthly Savings:</strong> ₹5,800</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Customer Reviews Grid -->
+            <div class="row">
+                <!-- Review 1 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-left">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Dr. Rajesh Patel</h5>
+                                    <p class="text-muted mb-0">Medical Clinic - Ahmedabad, Gujarat</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"For my medical clinic, consistent power is essential for medical equipment. Installing a hybrid solar system with battery backup has ensured uninterrupted power during Gujarat's frequent grid outages. The excellent ROI and reduced diesel generator costs have benefited our business tremendously."</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">10kW System</span>
+                                <span class="badge bg-success">7.5kWh Battery</span>
+                                <span class="badge bg-info">3.2 Year ROI</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 2 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-right">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Priya Venkatesh</h5>
+                                    <p class="text-muted mb-0">Apartment Building Resident - Bangalore, Karnataka</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star-half-alt text-warning"></i>
+                            </div>
+                            <p>"Our apartment owners' association decided to install solar for common areas and rooftop space. It powers our water pumps, elevators, and corridor lighting. In Bangalore's perfect climate for solar, we're generating surplus power that's credited to our common area maintenance bills through net metering."</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">25kW Community System</span>
+                                <span class="badge bg-success">BESCOM Net Metering</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 3 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-left">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Raman Singh</h5>
+                                    <p class="text-muted mb-0">Farmer - Bathinda, Punjab</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"The solar pump for my 5-acre farm has been life-changing. With unreliable grid power in our village, I previously depended on an expensive diesel pump. The PM-KUSUM scheme subsidy covered 90% of the cost, and now I have reliable irrigation without ongoing fuel costs. My crop yield has improved significantly!"</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">7.5HP Solar Pump</span>
+                                <span class="badge bg-success">PM-KUSUM 90% Subsidy</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Review 4 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-right">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Anil Reddy</h5>
+                                    <p class="text-muted mb-0">IT Professional - Hyderabad, Telangana</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"As a tech enthusiast, I was drawn to the smart home integration with my solar system. The mobile app tracking is fantastic - I can see my generation, consumption, and battery status in real-time. During Hyderabad's frequent summer power cuts, we remain comfortable with AC running on solar power."</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">6kW Smart System</span>
+                                <span class="badge bg-success">10kWh Battery</span>
+                                <span class="badge bg-info">Smart Home Integration</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 5 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-left">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Vishal Mehta</h5>
+                                    <p class="text-muted mb-0">Hotel Owner - Jaipur, Rajasthan</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"Rajasthan's abundant sunshine made solar a no-brainer for our 35-room hotel. We've installed a 40kW system that powers our hot water systems, air conditioning, and common areas. Guests appreciate our eco-friendly approach, and we market ourselves as a sustainable hospitality option."</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">40kW Commercial System</span>
+                                <span class="badge bg-success">Solar Water Heating</span>
+                                <span class="badge bg-info">Carbon-Neutral Business</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Review 6 -->
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100 glass-effect reveal-right">
+                        <div class="card-body">
+                            <div class="d-flex mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                </div>
+                                <div>
+                                    <h5 class="mb-0">Maya Iyer</h5>
+                                    <p class="text-muted mb-0">Eco-Retreat Owner - Munnar, Kerala</p>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                                <i class="fas fa-star text-warning"></i>
+                            </div>
+                            <p>"Our off-grid eco-retreat in the Western Ghats operates entirely on solar power. Despite Kerala's seasonal rains, our system with expanded battery capacity keeps us running year-round. Guests love the sustainability aspect while enjoying modern comforts in a remote natural setting."</p>
+                            <div class="mt-3">
+                                <span class="badge bg-primary">15kW Off-Grid System</span>
+                                <span class="badge bg-success">30kWh Battery Bank</span>
+                                <span class="badge bg-info">Eco-Tourism Award Winner</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Your Story Section -->
+            <div class="row mt-5">
+                <div class="col-12">
+                    <div class="card glass-effect reveal-bottom">
+                        <div class="card-body p-4">
+                            <h3 class="text-center gradient-text mb-3">Share Your Solar Success Story</h3>
+                            <div class="india-accent mb-4 mx-auto" style="max-width: 100px;"></div>
+                            <form id="testimonialForm" class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="location" class="form-label">Location</label>
+                                    <input type="text" class="form-control" id="location" placeholder="City, State" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="mobile" class="form-label">Mobile Number</label>
+                                    <input type="tel" class="form-control" id="mobile" placeholder="+91" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="installationType" class="form-label">Installation Type</label>
+                                    <select class="form-select" id="installationType" required>
+                                        <option value="">Choose...</option>
+                                        <option>Residential Rooftop Solar</option>
+                                        <option>Commercial Solar</option>
+                                        <option>Agricultural Solar Pump</option>
+                                        <option>Hybrid Solar System</option>
+                                        <option>Off-Grid Solar</option>
+                                        <option>Solar Water Heating</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="systemSize" class="form-label">System Size (kW)</label>
+                                    <input type="number" class="form-control" id="systemSize" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="monthlyBill" class="form-label">Monthly Savings (₹)</label>
+                                    <input type="number" class="form-control" id="monthlyBill" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="rating" class="form-label">Your Rating</label>
+                                    <select class="form-select" id="rating" required>
+                                        <option value="5">5 Stars - Excellent</option>
+                                        <option value="4">4 Stars - Very Good</option>
+                                        <option value="3">3 Stars - Good</option>
+                                        <option value="2">2 Stars - Fair</option>
+                                        <option value="1">1 Star - Poor</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="testimonial" class="form-label">Your Solar Success Story</label>
+                                    <textarea class="form-control" id="testimonial" rows="4" required></textarea>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button type="submit" class="btn btn-solar">Submit Your Story</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById('testimonialForm').addEventListener('submit', function(e) {
+                e.preventDefault();
+                // Here you would typically send the form data to your server
+                alert('Thank you for sharing your story! It will be reviewed and posted soon.');
+                this.reset();
+            });
+        </script>
+    </section>
+</body>
+</html> 

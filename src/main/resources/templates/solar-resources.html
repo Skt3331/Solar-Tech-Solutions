@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Solar Resources - SolarTech India</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-3">Solar Energy Resources</h1>
+            <div class="india-accent mb-4 mx-auto" style="max-width: 150px;"></div>
+            <p class="text-center lead mb-5">Educational resources to help you make informed decisions about solar energy in India</p>
+            
+            <!-- Categories Grid -->
+            <div class="row mb-5">
+                <!-- Guide Category -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal-left">
+                        <div class="card-body text-center">
+                            <i class="fas fa-book fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Solar Guides</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Comprehensive guides to help you understand solar power systems for India</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Financial Category -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal">
+                        <div class="card-body text-center">
+                            <i class="fas fa-rupee-sign fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Financial Resources</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Information about subsidies, financing, and the economics of solar in India</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Technical Category -->
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal-right">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tools fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Technical Resources</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Technical specifications, maintenance guides, and installation information</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Solar Guides -->
+            <div class="resource-section mb-5 pt-3">
+                <h2 class="mb-4"><i class="fas fa-book text-primary me-2"></i>Solar Guides</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>How Solar Works in India</h4>
+                                <p>Learn how solar power systems function in Indian weather conditions and the components that make up a solar system.</p>
+                                <a href="/how-it-works" class="btn btn-solar mt-3">Read Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Solar Panel Guide for Indian Conditions</h4>
+                                <p>Understand different types of solar panels available in India and which ones are best for different regions of the country.</p>
+                                <a href="/solar-panel-guide" class="btn btn-solar mt-3">Read Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Solar Solutions for Different Needs</h4>
+                                <p>Explore residential, commercial, agricultural, and other solar solutions designed for India's diverse needs.</p>
+                                <a href="/solar-solutions" class="btn btn-solar mt-3">View Solutions</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Energy Storage Options</h4>
+                                <p>Learn about battery backup systems, their importance in India's power scenario, and available options in the market.</p>
+                                <a href="/energy-storage" class="btn btn-solar mt-3">Read Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Financial Resources -->
+            <div class="resource-section mb-5 pt-3">
+                <h2 class="mb-4"><i class="fas fa-rupee-sign text-primary me-2"></i>Financial Resources</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Government Subsidies & Incentives</h4>
+                                <p>Comprehensive guide to central and state solar subsidies in India, including the PM-KUSUM scheme, MNRE subsidies, and state-specific incentives.</p>
+                                <a href="/tax-incentives" class="btn btn-solar mt-3">View Subsidies</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Solar Financing Options in India</h4>
+                                <p>Explore financing mechanisms including solar loans, CAPEX vs OPEX models, power purchase agreements, and roof leasing options.</p>
+                                <a href="/solar-financing" class="btn btn-solar mt-3">View Options</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Return on Investment Analysis</h4>
+                                <p>Understand the financial benefits of going solar in India, payback periods, and long-term savings specific to different regions.</p>
+                                <a href="/roi-analysis" class="btn btn-solar mt-3">View Analysis</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Solar Savings Calculator</h4>
+                                <p>Use our interactive calculators to estimate your savings, system requirements, and financial benefits tailored to your location in India.</p>
+                                <a href="/calculator" class="btn btn-solar mt-3">Use Calculator</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Technical Resources -->
+            <div class="resource-section mb-5 pt-3">
+                <h2 class="mb-4"><i class="fas fa-tools text-primary me-2"></i>Technical Resources</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Installation Process Guide</h4>
+                                <p>Step-by-step guide to the solar installation process in India, including permits, paperwork, and what to expect.</p>
+                                <a href="/installation-guide" class="btn btn-solar mt-3">Read Guide</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Maintenance and Care</h4>
+                                <p>Learn how to maintain your solar system for optimal performance in Indian conditions, including monsoon and summer care.</p>
+                                <a href="/maintenance-tips" class="btn btn-solar mt-3">View Tips</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Environmental Benefits</h4>
+                                <p>Discover the environmental impact of solar energy in the Indian context and how it helps address local environmental challenges.</p>
+                                <a href="/environmental-benefits" class="btn btn-solar mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Warranty Information</h4>
+                                <p>Understanding solar equipment warranties, their importance in the Indian market, and what to look for when purchasing.</p>
+                                <a href="/warranty-info" class="btn btn-solar mt-3">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Additional Resources -->
+            <div class="resource-section mb-5 pt-3">
+                <h2 class="mb-4"><i class="fas fa-plus-circle text-primary me-2"></i>Additional Resources</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Success Stories</h4>
+                                <p>Read testimonials and case studies from our customers across India who have benefited from going solar.</p>
+                                <a href="/testimonials" class="btn btn-solar mt-3">View Stories</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Solar Energy Blog</h4>
+                                <p>Stay updated with the latest news, trends, and developments in India's solar energy landscape.</p>
+                                <a href="/blog" class="btn btn-solar mt-3">Read Blog</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-left">
+                            <div class="card-body">
+                                <h4>Residential Case Studies</h4>
+                                <p>Detailed case studies of residential solar installations across different regions of India.</p>
+                                <a href="/residential-case-studies" class="btn btn-solar mt-3">View Case Studies</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 glass-effect hover-float reveal-right">
+                            <div class="card-body">
+                                <h4>Commercial Case Studies</h4>
+                                <p>Learn how businesses across India have successfully implemented solar solutions to cut costs and go green.</p>
+                                <a href="/commercial-case-studies" class="btn btn-solar mt-3">View Case Studies</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- FAQ Section -->
+            <div class="row mt-5">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card glass-effect p-4 reveal-bottom">
+                        <div class="card-body text-center">
+                            <h3 class="gradient-text">Have Questions?</h3>
+                            <div class="india-accent mb-3 mx-auto" style="max-width: 100px;"></div>
+                            <p class="mb-4">Check out our frequently asked questions section or contact our solar experts for personalized advice.</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <a href="/faq" class="btn btn-primary">
+                                    <i class="fas fa-question-circle me-2"></i>View FAQ
+                                </a>
+                                <a href="/contact" class="btn btn-success">
+                                    <i class="fas fa-phone me-2"></i>Contact Us
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 

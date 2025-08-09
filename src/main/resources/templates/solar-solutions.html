@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+    th:replace="~{base::layout(~{::section})}">
+<head>
+<meta charset="UTF-8">
+<title>Solar Solutions for Indian Homes & Businesses</title>
+</head>
+<body>
+    <section>
+        <div class="container py-5">
+            <h1 class="text-center gradient-text mb-3">Solar Solutions for India</h1>
+            <div class="india-accent mb-4 mx-auto" style="max-width: 150px;"></div>
+            <p class="text-center lead mb-5">Customized solar power solutions designed for Indian homes, businesses, and farms</p>
+            
+            <!-- Solution Categories -->
+            <div class="row mb-5">
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal-left">
+                        <div class="card-body text-center">
+                            <i class="fas fa-home fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Residential</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Solar solutions for Indian homes - from apartments to bungalows</p>
+                            <a href="#residential" class="btn btn-solar mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal">
+                        <div class="card-body text-center">
+                            <i class="fas fa-building fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Commercial</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Solar solutions for businesses, offices, and commercial properties</p>
+                            <a href="#commercial" class="btn btn-solar mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="card h-100 glass-effect transform-3d reveal-right">
+                        <div class="card-body text-center">
+                            <i class="fas fa-tractor fa-3x text-primary mb-3"></i>
+                            <h3 class="gradient-text">Agricultural</h3>
+                            <div class="india-accent mb-3"></div>
+                            <p>Solar solutions for farms, irrigation, and rural applications</p>
+                            <a href="#agricultural" class="btn btn-solar mt-3">Learn More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Residential Solutions -->
+            <div id="residential" class="solution-section mb-5 pt-3">
+                <h2 class="gradient-text mb-4">Residential Solar Solutions</h2>
+                <div class="india-accent mb-4"></div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-plug text-primary me-2"></i>On-Grid Solar System</h4>
+                                <p>Connected to the utility grid, allowing you to export excess power and earn credits through net metering policies.</p>
+                                <h5 class="mb-3">Features:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>No battery storage needed</li>
+                                            <li>Lower installation cost</li>
+                                            <li>Earn credits from excess power</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Eligible for govt subsidies</li>
+                                            <li>Grid as backup power</li>
+                                            <li>Minimal maintenance</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Subsidy Available:</strong> Up to 40% for systems up to 3kW under PM-KUSUM scheme
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Residential" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-battery-full text-primary me-2"></i>Hybrid Solar System</h4>
+                                <p>The best of both worlds: connected to the grid with battery backup for power outages, common in Indian cities.</p>
+                                <h5 class="mb-3">Features:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Battery backup during outages</li>
+                                            <li>Prioritize self-consumption</li>
+                                            <li>Time-of-use load shifting</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Grid connection for backup</li>
+                                            <li>Smart monitoring system</li>
+                                            <li>Perfect for areas with frequent power cuts</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular in:</strong> Urban areas with unreliable grid power like parts of Delhi, Mumbai suburbs, and Tier 2 cities
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Hybrid" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-map-marked-alt text-primary me-2"></i>Off-Grid Solar System</h4>
+                                <p>Complete energy independence with solar panels and battery storage, ideal for remote areas without reliable grid access.</p>
+                                <h5 class="mb-3">Features:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>No grid connection needed</li>
+                                            <li>Energy independence</li>
+                                            <li>Battery storage system</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Ideal for remote locations</li>
+                                            <li>Backup generator option</li>
+                                            <li>Scalable design</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular in:</strong> Rural areas, Himalayan regions, islands, and farming communities
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Off-Grid" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-microchip text-primary me-2"></i>Smart Home Solar System</h4>
+                                <p>Integrated solar solution with smart home technology for optimal energy management and convenience.</p>
+                                <h5 class="mb-3">Features:</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Smart energy monitoring</li>
+                                            <li>Mobile app control</li>
+                                            <li>Intelligent load management</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <ul>
+                                            <li>Integration with home automation</li>
+                                            <li>Voice assistant compatibility</li>
+                                            <li>Energy usage optimization</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Perfect for:</strong> Modern homes in metros like Bangalore, Hyderabad, and Gurgaon with tech-savvy homeowners
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Smart+Home" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Commercial Solutions -->
+            <div id="commercial" class="solution-section mb-5 pt-3">
+                <h2 class="gradient-text mb-4">Commercial Solar Solutions</h2>
+                <div class="india-accent mb-4"></div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-industry text-primary me-2"></i>Industrial Rooftop Solar</h4>
+                                <p>Large-scale rooftop installations for factories, warehouses, and industrial facilities across India.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Significantly reduce operational costs</li>
+                                    <li>Utilize large unused roof areas</li>
+                                    <li>Lower your carbon footprint</li>
+                                    <li>Accelerated depreciation benefits</li>
+                                    <li>Meet renewable energy requirements</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>ROI:</strong> Typically 3-5 years for industrial installations in India
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Industrial" class="btn btn-solar">View Solutions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-store text-primary me-2"></i>Commercial Building Solar</h4>
+                                <p>Customized solutions for offices, retail spaces, hospitals, schools, and commercial buildings.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Reduce daytime power consumption costs</li>
+                                    <li>Enhance corporate sustainability profile</li>
+                                    <li>Backup power during grid outages</li>
+                                    <li>Utilize carports and facades if roof space is limited</li>
+                                    <li>Tax benefits under Indian tax codes</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular option:</strong> OPEX model with no upfront investment through Power Purchase Agreements (PPAs)
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Commercial" class="btn btn-solar">View Solutions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-hotel text-primary me-2"></i>Hospitality Sector Solar</h4>
+                                <p>Specialized solutions for hotels, resorts, and hospitality businesses with high energy demands.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Power for hot water systems</li>
+                                    <li>Air conditioning support</li>
+                                    <li>Enhanced guest experience with reliable power</li>
+                                    <li>Eco-tourism marketing opportunity</li>
+                                    <li>Reduced operational expenses</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Ideal for:</strong> Resorts in Rajasthan, Kerala, Goa, and other tourist destinations
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Commercial" class="btn btn-solar">View Solutions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-solar-panel text-primary me-2"></i>Solar Carports & Parking Canopies</h4>
+                                <p>Dual-purpose installations providing covered parking while generating clean energy.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Make use of otherwise unused parking areas</li>
+                                    <li>Provide shade for vehicles</li>
+                                    <li>EV charging station integration</li>
+                                    <li>Visual statement of sustainability commitment</li>
+                                    <li>Protection from harsh Indian summers and monsoon</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular for:</strong> IT parks, shopping malls, and corporate campuses in cities like Pune, Bangalore and Hyderabad
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Commercial" class="btn btn-solar">View Solutions</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Agricultural Solutions -->
+            <div id="agricultural" class="solution-section mb-5 pt-3">
+                <h2 class="gradient-text mb-4">Agricultural Solar Solutions</h2>
+                <div class="india-accent mb-4"></div>
+                
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-water text-primary me-2"></i>Solar Pump Systems</h4>
+                                <p>Reliable solar-powered irrigation solutions for farmers, supported by government subsidies.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Independence from grid electricity</li>
+                                    <li>No fuel costs unlike diesel pumps</li>
+                                    <li>Daytime irrigation when most effective</li>
+                                    <li>Maintenance-free operation</li>
+                                    <li>Substantial subsidies under PM-KUSUM scheme</li>
+                                </ul>
+                                <div class="alert alert-success mt-3">
+                                    <strong>Government Subsidy:</strong> Up to 90% subsidy available for solar pumps under PM-KUSUM
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Agricultural" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-seedling text-primary me-2"></i>Solar Fencing Systems</h4>
+                                <p>Protect crops and property from wild animals with solar-powered electric fencing.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>No grid connection required</li>
+                                    <li>Low maintenance, durable design</li>
+                                    <li>Humane animal deterrent system</li>
+                                    <li>Seasonal adjustment capabilities</li>
+                                    <li>Weather-resistant components for Indian conditions</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular in:</strong> Areas near forests in states like Kerala, Karnataka, Maharashtra and Northern India
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Agricultural" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-left">
+                            <div class="card-body">
+                                <h4><i class="fas fa-warehouse text-primary me-2"></i>Cold Storage Solar Solutions</h4>
+                                <p>Power refrigeration and cold storage facilities to reduce post-harvest losses for farmers.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Reliable cooling independent of grid power</li>
+                                    <li>Reduce post-harvest losses</li>
+                                    <li>Store produce longer for better market prices</li>
+                                    <li>Battery backup for continuous operation</li>
+                                    <li>Phase change material integration for thermal storage</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Ideal for:</strong> Fruit and vegetable growing regions with limited cold chain infrastructure
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Agricultural" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card glass-effect h-100 reveal-right">
+                            <div class="card-body">
+                                <h4><i class="fas fa-sun text-primary me-2"></i>Solar Dryers</h4>
+                                <p>Efficient solar-powered drying systems for crops, spices, and food processing.</p>
+                                <h5 class="mb-3">Benefits:</h5>
+                                <ul>
+                                    <li>Hygienic and controlled drying environment</li>
+                                    <li>Faster drying than traditional methods</li>
+                                    <li>Preserve nutritional value and quality</li>
+                                    <li>Zero operating costs</li>
+                                    <li>Suitable for various crops and products</li>
+                                </ul>
+                                <div class="alert alert-info mt-3">
+                                    <strong>Popular for:</strong> Spice farmers in Kerala, fruit growers, and herb cultivators across India
+                                </div>
+                                <div class="text-center mt-3">
+                                    <a href="/products?category=Agricultural" class="btn btn-solar">View Products</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Call to Action -->
+            <div class="row mt-5">
+                <div class="col-md-10 offset-md-1">
+                    <div class="card glass-effect p-4 reveal-bottom">
+                        <div class="card-body text-center">
+                            <h3 class="gradient-text">Find Your Perfect Solar Solution</h3>
+                            <div class="india-accent mb-3 mx-auto" style="max-width: 100px;"></div>
+                            <p class="mb-4">Our solar experts can help determine the best solution based on your specific needs, location, and budget.</p>
+                            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                                <a href="/calculator" class="btn btn-primary btn-lg">
+                                    <i class="fas fa-calculator me-2"></i>Calculate Your Savings
+                                </a>
+                                <a href="/contact" class="btn btn-success btn-lg">
+                                    <i class="fas fa-phone me-2"></i>Speak to a Solar Expert
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html> 
