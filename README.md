@@ -12,6 +12,30 @@ SolarTech India is a comprehensive e-commerce platform designed for selling sola
 - **Payment Integration**: Support for various payment methods
 - **Admin Dashboard**: Comprehensive dashboard for business management
 
+## Screenshots
+
+Here are some screenshots of the application in action:
+
+| Homepage | Products Page | Solar Solutions |
+| :---: | :---: | :---: |
+| ![Homepage](Images/solar-2025-05-16-07_03_21.png) | ![Products Page](Images/solar-products-2025-05-16-07_04_00.png) | ![Solar Solutions](Images/solar-solutions-2025-05-16-07_04_12.png) |
+
+| Solar Resources | How It Works | Blog |
+| :---: | :---: | :---: |
+| ![Solar Resources](Images/solar-resources-2025-05-16-07_04_43.png) | ![How It Works](Images/solar-how-it-works-2025-05-16-07_05_21.png) | ![Blog](Images/solar-blog-2025-05-16-07_05_06.png) |
+
+| FAQ | Solar Calculator | Testimonials |
+| :---: | :---: | :---: |
+| ![FAQ](Images/solar-faq-2025-05-16-07_05_40.png) | ![Solar Calculator](Images/solar-calculator-2025-05-16-07_05_52.png) | ![Testimonials](Images/solar-testimonials-2025-05-16-07_07_00.png) |
+
+| Admin Dashboard | Admin Categories | Admin Products |
+| :---: | :---: | :---: |
+| ![Admin Dashboard](Images/solar-admin-2025-05-16-07_07_58.png) | ![Admin Categories](Images/solar-admin-category-2025-05-16-07_08_27.png) | ![Admin Products](Images/solar-admin-products-2025-05-16-07_08_41.png) |
+
+| Admin Orders | Admin Users | User Orders |
+| :---: | :---: | :---: |
+| ![Admin Orders](Images/solar-admin-orders-2025-05-16-07_08_58.png) | ![Admin Users](Images/solar-admin-users-2025-05-16-07_09_22.png) | ![User Orders](Images/solar-user-orders-2025-05-16-07_11_05.png) |
+
 ## Technology Stack
 - **Backend**: Java 17 with Spring Boot 3.2.3
 - **Frontend**: Thymeleaf, HTML, CSS, JavaScript, Bootstrap
@@ -119,4 +143,4 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 ## Contact
 For questions or support, please contact:
 - Email: support@solartechindia.com
-- Website: https://www.solartechindia.com 
+- Website: https://www.solartechindia.com
